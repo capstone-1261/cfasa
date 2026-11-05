@@ -2,7 +2,8 @@
 <footer>
 
     <p>
-        Centre for Autism Services Alberta
+        Centre for Autism Services Alberta 
+        testing testing
     </p>
 
 </footer>
