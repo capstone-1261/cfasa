@@ -1,0 +1,32 @@
+/*
+Theme Name: Centre for Autism Services Alberta Theme
+Author: Brew and Build
+Description: Custom hybrid WordPress theme for Centre for Autism Services Alberta
+Version: 1.0
+*/
+
+/* 
+===================================================
+Custom Global Styles (Outside of JSON Capabilities
+=================================================== 
+*/
+main {
+    padding: var(--wp--preset--spacing--large);
+}
+
+/* 
+==========================
+Header + Navigation Styles
+========================== 
+*/
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-inner nav ul {
+    display: flex;
+    gap: var(--wp--preset--spacing--base);
+}
