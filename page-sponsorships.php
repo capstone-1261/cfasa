@@ -68,7 +68,7 @@
     <div class="cta-text">
         <div>
             <h3>Considering becoming a sponsor or partner?</h3>
-            <p>We would love to chat about opportunities that would be the best fit for oyu</p>
+            <p>We would love to chat about opportunities that would be the best fit for you</p>
         </div>
         <div>
             <div>
