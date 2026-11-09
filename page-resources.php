@@ -3,35 +3,26 @@
 <main>
 <h1><?php the_title(); ?></h1>
 
+<div class="resources-intro">
+  <h2>External Resources</h2>
+    <h3>A list of general external resources</h3>
+</div>
+
 <section class="external-resources">
-  <div class="resource-card">
-    <div class="resource-card-body">
-      <div class="resource-logo">
-        <!-- resource logo goes here -->
-      </div>
 
-      <div class="resource-content">
-        <h2>AIDE Canada</h2>
-        <p>Discover Canada’s largest resource hub for content catered to the autism and neurodivergent communities. Explore the collection of over 3000 books on autism, and discover thousands of charities, services, and program-based communities.</p>
-      </div>
-
-      <div class="resource-link">
-        <a href="https://aidecanada.ca/" class="btn">Take Me There</a>
-      </div>
+  <!-- Filter options -->
+  <div class="external-resources-filters">
+    <span>Filter by Topic:</span>
+    <div class="filter-options">
+      <!-- Filter options go here -->
     </div>
+    <span>Show More Topics...</span>
+    <span>Clear All Filters</span>
+  </div>
 
-    <div class="resource-card-footer">
-      <div class="resource-full-link">      
-        <p class="small-condensed">Full Link:</p>
-        <a class="small-condensed" href="https://aidecanada.ca/">https://aidecanada.ca/</a>
-      </div>
-      <div class="resource-tags">
-        <p class="small-condensed">Topics:</p>
-        <span class="pill-badge">
-          <!-- Topic Tag -->
-        </span>
-      </div>
-    </div>
+  <!-- Resource cards -->
+  <div class="external-resources-container">
+    <!-- ACF Goes here, using template part called external-resource-card  -->
   </div>
 </section>
 
