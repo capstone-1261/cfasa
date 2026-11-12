@@ -1,4 +1,4 @@
-<?php block_template_part('header'); ?>
+<?php get_header(); ?>
 
 <main>
 
