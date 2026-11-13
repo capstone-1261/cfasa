@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_template_part('parts/hero-banner-basic'); ?>
 
 <main>
 <h1><?php the_title(); ?></h1>
