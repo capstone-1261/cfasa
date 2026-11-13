@@ -41,3 +41,8 @@ function centre_autism_acf_json_load_point($paths) {
 add_filter('acf/settings/load_json', 'centre_autism_acf_json_load_point');
 
 add_action('wp_enqueue_scripts', 'centre_autism_theme_styles');
+
+function cfasa_enable_page_features() {
+    add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'cfasa_enable_page_features' );

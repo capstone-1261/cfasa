@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 
 <main>
-<h1><?php the_title(); ?></h1>
 
-<div class="resources-intro">
+<?php get_template_part( 'parts/hero-banner-basic' ); ?>
+
+<div class="">
   <h2>External Resources</h2>
     <h3>A list of general external resources</h3>
 </div>
