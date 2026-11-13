@@ -12,37 +12,42 @@
 
     "color": {
       "palette": [
-        {
-          "name": "Navy Blue CFASA",
-          "slug": "navy-blue-cfasa",
-          "color": "#0C2542"
-        },
-        {
-          "name": "Red CFASA",
-          "slug": "red-cfasa",
-          "color": "#CF0000"
-        },
-        {
-          "name": "Yellow CFASA",
-          "slug": "yellow-cfasa",
-          "color": "#FFD02D"
-        },
-        {
-          "name": "Cyan CFASA",
-          "slug": "cyan-cfasa",
-          "color": "#62C6C6"
-        },
-        {
-          "name": "Not Quite White",
-          "slug": "not-quite-white",
-          "color": "#EFF2F8"
-        },
-        {
-          "name": "Not Quite Black",
-          "slug": "not-quite-black",
-          "color": "#151D27"
-        }
-      ],
+				{
+					"name": "Navy Blue CFASA",
+					"slug": "navy-blue-cfasa",
+					"color": "#0C2542"
+				},
+				{
+					"name": "Red CFASA",
+					"slug": "red-cfasa",
+					"color": "#CF0000"
+				},
+				{
+					"name": "Yellow CFASA",
+					"slug": "yellow-cfasa",
+					"color": "#FFD02D"
+				},
+				{
+					"name": "Cyan CFASA",
+					"slug": "cyan-cfasa",
+					"color": "#62C6C6"
+				},
+				{
+					"name": "Cyan CFASA Dark",
+					"slug": "cyan-cfasa-dark",
+					"color": "#189696"
+				},
+				{
+					"name": "Not Quite White",
+					"slug": "not-quite-white",
+					"color": "#EFF2F8"
+				},
+				{
+					"name": "Not Quite Black",
+					"slug": "not-quite-black",
+					"color": "#151D27"
+				}
+			],
       "gradients": [
         {
           "name": "CFASA Color Gradient",

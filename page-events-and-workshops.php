@@ -65,7 +65,10 @@
 </div>
 
 <!-- Component: Promo banner -->
- <?php get_template_part('parts/promo-banner'); ?>
+<?php get_template_part('parts/promo-banner'); ?>
+
+<?php echo do_blocks( '<!-- wp:pattern {"slug":"cfasab-theme/promo-banner"} /-->' ); ?>
+
 
 
 
