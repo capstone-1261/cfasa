@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<?php
+$volunteer_stories = new WP_Query(array(
+    'post_type' => 'volunteer-stories',
+    'posts_per_page' => -1
+));
+?>
+
 <main>
 <h1><?php the_title(); ?></h1>
 
@@ -135,7 +142,13 @@
             <p>Our volunteers selflessly devote their time, generously share their talents, and leverage their strengths to create an environment at CFASA where participation, learning, and personal growth thrive.</p>
             <p>Thank you to all of our amazing volunteers!</p>
             <div class="volunteer-stories-cards">
-                /* Acfs can go here */
+                <?php while ($volunteer_stories->have_posts()) : $volunteer_stories->the_post(); ?>
+
+                <?php get_template_part('template-parts/volunteer-story'); ?>
+
+                <?php endwhile; ?>
+
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </section>
