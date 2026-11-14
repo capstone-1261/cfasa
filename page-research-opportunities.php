@@ -1,7 +1,8 @@
 <?php get_header(); ?>
-
+<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
 <main>
-<h1><?php the_title(); ?></h1>
+
+
 
 <section class="research-opportunities">
   <p>At CFASA, we value research that deepens understanding and improves the lives of Autistic people, neurodivergent people, families, and communities. We are glad to support researchers whose work aligns with our values and purpose.</p>

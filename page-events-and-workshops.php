@@ -1,16 +1,7 @@
 <?php get_header(); ?>
-<?php get_template_part('parts/hero-banner-basic'); ?>
+<?php get_template_part('parts/hero-banner-minimal'); ?>
 
 <main>
-<h1><?php the_title(); ?></h1>
-
-<div class="events-and-workshops-intro">
-  <div>
-      <h2>Upcoming Events</h2>
-      <p>Family events and learning opportunities.</p>
-  </div>
-</div>
-
 
 <section class="upcoming-events">
   <div class="upcoming-events-container">
