@@ -1,8 +1,6 @@
 <?php get_header(); ?>
-
+<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
 <main>
-
-<?php get_template_part( 'parts/hero-banner-basic' ); ?>
 
 <div class="">
   <h2>External Resources</h2>

@@ -1,7 +1,8 @@
 <?php get_header(); ?>
+<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
 
 <main>
-<h1><?php the_title(); ?></h1>
+
 
 <div class="news-and-media-intro">
   <h2>News & Media</h2>
