@@ -95,3 +95,35 @@ function cfasa_save_hero_intro_box( $post_id ) {
 }
 add_action( 'save_post_page', 'cfasa_save_hero_intro_box' );
 
+
+
+
+/*  Programs & Services CSS  */
+
+function cfasa_programs_services_styles() {
+
+    if ( is_page( array(
+        'programs-services',
+        'early-childhood-services',
+        'professional-services',
+        'diagnostic-services',
+        'community-social-recreation-programs',
+        'independent-living-skills-employment',
+        'inclusive-post-secondary-education-services',
+        'summer-programming',
+        'rent-our-kitchen-space'
+    ) ) ) {
+
+        wp_enqueue_style(
+            'cfasa-programs-services',
+            get_theme_file_uri('/assets/css/program-services.css'),
+            array('centre-autism-style'),
+            '1.0.0'
+        );
+
+    }
+}
+
+add_action('wp_enqueue_scripts', 'cfasa_programs_services_styles');
+
+/* End of Programs & Services CSS  */
