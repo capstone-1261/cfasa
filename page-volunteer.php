@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_template_part('parts/hero-banner-basic'); ?>
 
 <?php
 $volunteer_stories = new WP_Query(array(
