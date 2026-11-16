@@ -1,0 +1,227 @@
+/* Get involved main page css */
+
+/* Get involved donation page css */
+.donation-container {}
+
+.donation-intro {
+    display: flex;
+    width: 1438px;
+    height: 353px;
+    max-width: 1440px;
+    padding: 32px;
+    align-items: flex-end;
+    gap: 32px;
+    border-radius: 24px 24px 0 0;
+    background: var(--White, #FCFDFE);
+}
+
+.donation-intro h2 {
+    align-self: stretch;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Display Large */
+    font-family: Montserrat;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 114%;
+    /* 54.72px */
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+}
+
+.donation-intro p:first-of-type {
+    align-self: stretch;
+    color: var(--cyan-darker-legible-on-light-bg, #189696);
+    /* Hero Subtitle */
+    font-family: Montserrat;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    /* 142.857% */
+}
+
+.donate-introo p:last-of-type {
+    align-self: stretch;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Paragraph */
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    /* 162.5% */
+}
+
+.donate-intro-image {
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 24px;
+    background: url(<path-to-image>) lightgray -809.562px 0px / 207.942% 100% no-repeat;
+}
+
+.donating-section {
+    display: flex;
+    padding: 64px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+    align-self: stretch;
+    background: var(--White, #FCFDFE);
+}
+
+.donation-secondary-image {
+    width: 364px;
+    height: 363px;
+    flex-shrink: 0;
+    aspect-ratio: 364/363;
+    border-radius: 200px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.donation-secondary-text {
+    flex: 1 0 0;
+}
+
+.donation-secondary-text h2 {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Heading 2 */
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    /* 138.462% */
+    letter-spacing: 0.52px;
+}
+
+.donation-secondary-text p {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Paragraph */
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.bold {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Heading 5 */
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.donation-card-section-title {
+    display: flex;
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
+}
+
+.donation-card-section h2 {
+    flex: 1 0 0;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Display - Smaller */
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%;
+    /* 37.08px */
+    font-variant: all-small-caps;
+    letter-spacing: 1.08px;
+}
+
+.donation-cards {
+    display: flex;
+    min-width: 260px;
+    max-width: 592px;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 20px;
+    background: var(--Yellow-Pastel, #FFF7E6);
+    /* Little Shadow */
+    box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.dontation-card {}
+
+.card-text {
+    border-radius: 20px;
+    background: var(--Yellow-Pastel, #FFF7E6);
+    /* Little Shadow */
+    box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    border: 1px solid #FFD02D;
+    background: #FFF;
+}
+
+.card-text h3 {
+    color: var(--Not-Quite-Black, #151D27);
+    flex: 1 0 0;
+    /* Heading 3 */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    /* 166.667% */
+    letter-spacing: 0.18px;
+}
+
+.donate-info {}
+
+.donate-info img {
+    width: 61px;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    text-align: center;
+    /* Heading 2 */
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    /* 138.462% */
+    letter-spacing: 0.52px;
+}
+
+.donate-info p {
+    color: var(--Not-Quite-Black, #151D27);
+    /* Paragraph */
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.donate-info-bold {
+    color: var(--Not-Quite-Black, #151D27);
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    /* 130% */
+}
+
+.donate-info span {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Paragraph */
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+}
