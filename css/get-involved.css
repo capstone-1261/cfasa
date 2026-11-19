@@ -1,4 +1,7 @@
 /* Get involved main page css */
+main {
+    padding: 0;
+}
 
 /* Get involved donation page css */
 .donation-container {}
@@ -635,12 +638,12 @@
     letter-spacing: 0.42px;
 }
 
-/* Get involved fundraisers page css */
+/* Get involved volunteer page css */
 
 .volunteer-intro {
     display: flex;
     height: 353px;
-    max-width: 1440px;
+
     padding: 32px;
     align-items: flex-end;
     gap: 32px;
@@ -651,17 +654,20 @@
 
 .volunteer-intro-text {
     display: flex;
-    width: 592px;
+    max-width: 60ch;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     gap: 8px;
 }
 
+.volunteer-intro-text h2, .volunteer-intro-text p {
+    margin: 0;
+}
+
 .volunteer-intro-text h2 {
     align-self: stretch;
     color: var(--Navy-Blue-CFASA, #0C2542);
-
     /* Display Large */
     font-family: Montserrat;
     font-size: 48px;
@@ -725,13 +731,17 @@
 
 .volunteer {
     display: flex;
-    align-items: flex-start;
     gap: 32px;
     align-self: stretch;
 }
 
-.volunteer div p {
-    width: 592px;
+.volunteer>div {
+    flex: 1;
+    min-width: 0;
+}
+
+.volunteer-paragraph {
+    max-width: 65ch;
     color: var(--Not-Quite-Black, #151D27);
     /* Paragraph */
     font-family: Arial;
@@ -777,18 +787,16 @@
     align-items: center;
     gap: 32px;
     align-self: stretch;
+    text-wrap: auto;
 }
 
 .list-item p {
-    display: flex;
     max-width: 592px;
     padding-bottom: 16px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 10px;
     flex: 1 0 0;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .list-item span {
@@ -801,18 +809,18 @@
 }
 
 .list-item svg {
-    width: 52px;
+    max-width: 52px;
     height: 52px;
     aspect-ratio: 1/1;
 }
 
 .volunteer-quote {
-    width: 994px;
+    max-width: 994px;
     height: 430px;
 }
 
 .volunteer-quote-image img {
-    width: 427.935px;
+    max-width: 427.935px;
     height: 427.935px;
     aspect-ratio: 1/1;
     border-radius: 427.935px;
@@ -822,19 +830,19 @@
 }
 
 .volunteer-quote svg {
-    width: 142.049px;
+    max-width: 142.049px;
     height: 158.873px;
     aspect-ratio: 76/85;
 }
 
 .quote-text {
-    width: 473.216px;
+    max-width: 473.216px;
     height: 428px;
 }
 
 .quote-text p:first-of-type {
     display: flex;
-    width: 473.216px;
+    max-width: 473.216px;
     height: 428px;
     flex-direction: column;
     justify-content: center;
@@ -851,7 +859,7 @@
 
 .quote-special {
     display: flex;
-    width: 375.168px;
+    max-width: 375.168px;
     height: 64.903px;
     flex-direction: column;
     justify-content: center;
@@ -886,9 +894,8 @@
 }
 
 .volunteer-cta-intro h2 {
-    width: 753.639px;
+    max-width: 753.639px;
     color: var(--Navy-Blue-CFASA, #0C2542);
-
     /* Heading 2 */
     font-family: Montserrat;
     font-size: 26px;
@@ -900,7 +907,7 @@
 }
 
 .volunteer-cta-intro p {
-    width: 592px;
+    max-width: 592px;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Paragraph */
     font-family: Arial;
@@ -909,6 +916,12 @@
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
+    margin: 0;
+}
+
+.volunteer-cta-contact p {
+    margin: 0;
+    text-wrap: nowrap;
 }
 
 .uni-org {
@@ -947,6 +960,7 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    max-width: 100%;
 }
 
 .uni-card {
@@ -960,6 +974,7 @@
     background: #FFF;
     /* High Spread Drop Shadow */
     box-shadow: 0 16px 27px 0 rgba(0, 0, 0, 0.09);
+    max-width: 410px;
 }
 
 .uni-card-text {
@@ -996,7 +1011,7 @@
 
 .uni-card-contact {
     display: flex;
-    width: 346px;
+    max-width: 346px;
     padding: 16px 0;
     align-items: center;
     gap: 32px;
@@ -1004,7 +1019,7 @@
 }
 
 .uni-card-svg {
-    width: 75px;
+    max-width: 75px;
     height: 75px;
     flex-shrink: 0;
 }
@@ -1015,6 +1030,11 @@
     align-items: flex-start;
     gap: 8px;
     flex: 1 0 0;
+}
+
+.uni-card-contact-text p {
+    margin: 0;
+    text-wrap: nowrap;
 }
 
 .uni-card-contact-text p:first-of-type {
@@ -1038,7 +1058,6 @@
 
 .uni-card-contact-text div p {
     color: var(--Navy-Blue-CFASA, #0C2542);
-
     /* Paragraph */
     font-family: Arial;
     font-size: 16px;
@@ -1107,7 +1126,6 @@
 
 .translators-text h3 {
     color: var(--cyan-darker-legible-on-light-bg, #189696);
-
     /* Heading 3 */
     font-family: Montserrat;
     font-size: 18px;
@@ -1119,7 +1137,7 @@
 }
 
 .translators-text p {
-    width: 592px;
+    max-width: 592px;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Paragraph */
     font-family: Arial;
@@ -1132,7 +1150,7 @@
 
 .translators button {
     display: flex;
-    width: 250px;
+    max-width: 250px;
     height: 44px;
     min-width: 90px;
     max-width: 300px;
@@ -1183,7 +1201,7 @@
 }
 
 .volunteer-stories-container p {
-    width: 592px;
+    max-width: 592px;
     color: var(--Not-Quite-Black, #151D27);
     /* Paragraph */
     font-family: Arial;
@@ -1196,7 +1214,7 @@
 
 .volunteer-ctories-cards {
     display: inline-grid;
-    width: 1134px;
+    max-width: 1134px;
     row-gap: 32px;
     column-gap: 32px;
     grid-template-rows: fit-content(100%) fit-content(100%) 220.40px;
@@ -1231,4 +1249,287 @@
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
+}
+
+
+/* 
+Queries
+*/
+
+@media (max-width: 767px) {
+
+    /* Volunteer Introduction */
+
+    .volunteer-intro {
+        display: flex;
+        height: auto;
+        padding: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .volunteer-intro-text {
+        max-width: 50ch;
+    }
+
+    .volunteer-intro-text h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .volunteer-intro-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+
+    /* Main Page Content */
+
+    .volunteer-page-content-container {
+        padding: 1.5rem;
+        gap: 40px;
+    }
+
+    .volunteer-page-content {
+        gap: 40px;
+    }
+
+    .volunteer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .volunteer-paragraph {
+        max-width: 60ch;
+    }
+
+    .volunteer div,
+    .volunteer div p {
+        max-width: 100%;
+    }
+
+
+    /* Volunteer Information Rows */
+
+    .volunteer-info-rows {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .volunteer-info-rows h3 {
+        padding-left: 1rem;
+    }
+
+
+    .list-item p {
+        min-width: 0;
+    }
+
+    /* Volunteer Quote */
+
+    .volunteer-quote {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .volunteer-quote-image img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .quote-text {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .quote-text p:first-of-type {
+        max-width: 100%;
+        height: auto;
+        font-size: 1.5rem;
+        line-height: 32px;
+    }
+
+    .quote-special {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Call To Action */
+
+    .volunteer-cta {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .volunteer-cta-intro h2 {
+        font-size: 1.5rem;
+        line-height: 32px;
+    }
+
+    .volunteer-cta-intro p {
+        max-width: 100%;
+    }
+
+    .volunteer-cta-text-info {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+
+    /* University Organizations */
+
+    .uni-org {
+        height: auto;
+        padding: 1.5rem 0;
+    }
+
+    .uni-org h2,
+    .translators h2 {
+        font-size: 28px;
+    }
+
+    .uni-cards {
+        max-width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .uni-card {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .uni-card-contact {
+        width: 100%;
+        max-width: 100%;
+        gap: 16px;
+    }
+
+    .uni-card-contact-text div {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+
+    /* Translators */
+
+    .translators-container {
+        padding: 1.25rem;
+    }
+
+    .translators button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Volunteer Stories */
+
+    .volunteer-stories-container {
+        height: auto;
+        padding: 1.25rem;
+    }
+
+    .volunteer-ctories-cards {
+        display: grid;
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+
+    /* Application Form */
+
+    .application-form-container {
+        height: auto;
+        padding: 1.25rem;
+    }
+
+}
+
+
+/* ==========================================
+   TABLET WIDTH FIXES
+   ========================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Volunteer Introduction */
+
+    .volunteer-intro {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+    }
+
+    .volunteer-intro-text {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .volunteer-intro-image {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .volunteer-intro-image img {
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+        object-fit: cover;
+    }
+
+
+    /* University Cards */
+
+    .uni-org {
+        width: 100%;
+        box-sizing: border-box;
+        height: auto;
+        min-width: 0;
+    }
+
+    .uni-cards {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+
+    .uni-card {
+        flex: 1 1 300px;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .uni-card-contact-text {
+        min-width: 0;
+    }
+
+    .uni-card-contact-text p {
+        white-space: normal;
+    }
+
+    .uni-card-contact-text div {
+        flex-wrap: wrap;
+    }
+
 }
