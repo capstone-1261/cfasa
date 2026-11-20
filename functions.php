@@ -127,3 +127,26 @@ function cfasa_programs_services_styles() {
 add_action('wp_enqueue_scripts', 'cfasa_programs_services_styles');
 
 /* End of Programs & Services CSS  */
+
+/* Get Involved CSS */
+
+function cfasa_get_involved_styles() {
+
+    if ( is_page(array(
+        'volunteer',
+        'get-involved'
+    ) ) ) {
+
+        wp_enqueue_style(
+            'cfasa-get-involved',
+            get_theme_file_uri('/css/get-involved.css'),
+            array('centre-autism-style'),
+            '1.0.0'
+        );
+
+    }
+}
+
+add_action('wp_enqueue_scripts', 'cfasa_get_involved_styles');
+
+/* End of Get Involved CSS */
