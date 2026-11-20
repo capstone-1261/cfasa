@@ -434,17 +434,16 @@ main {
 /* Get involved fundraisers page css */
 .fundraiser-hero {
     display: flex;
-    height: 353px;
-    max-width: 1440px;
+    max-width: 100%;
     padding: 32px;
     align-items: flex-end;
     gap: 32px;
     align-self: stretch;
     border-radius: 24px 24px 0 0;
-    background: var(--White, #FCFDFE);
 }
 
 .fundraiser-hero-text h2 {
+    margin-bottom: 0;
     align-self: stretch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display Large */
@@ -482,20 +481,9 @@ main {
     padding: 64px 32px;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 64px;
+    gap: 32px;
     align-self: stretch;
     background: var(--White, #FCFDFE);
-}
-
-.fundraiser-gallery-title {
-    display: flex;
-    padding: 16px 0;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
 }
 
 .fundraiser-gallery-title h2 {
@@ -508,57 +496,55 @@ main {
     font-weight: 800;
     line-height: 103%;
     /* 37.08px */
-    font-variant: all-small-caps;
     letter-spacing: 1.08px;
+    display: flex;
+    padding: 16px 0;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
+    margin: 0;
+}
+
+.fundraising-cta-section {
+    padding: 0 32px 64px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .fundraising-cta {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
-}
-
-.fundraising-cta-title {
-    display: flex;
-    padding: 16px 0;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
-}
-
-.fundraising-cta-title h2 {
-    flex: 1 0 0;
-    color: var(--Navy-Blue-CFASA, #0C2542);
-    /* Display - Smaller */
-    font-family: Montserrat;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 103%;
-    /* 37.08px */
-    font-variant: all-small-caps;
-    letter-spacing: 1.08px;
-}
-
-.fundraising-cta-text {
-    display: flex;
     padding: 32px;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     align-self: stretch;
     border-radius: 20px;
     border: 1px solid var(--Cyan-CFASA, #62C6C6);
     background: #FFF;
+    gap: 32px;
 }
 
-.fundraising-cta-text h3 {
-    width: 753.639px;
+.fundraising-cta-text-info {
+    justify-content: space-between;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.fundraising-cta-flex {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.fundraising-cta-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fundraising-cta-intro h3, .fundraising-cta-contact-spec h3 {
+    max-width: 40ch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Heading 2 */
     font-family: Montserrat;
@@ -568,33 +554,11 @@ main {
     line-height: 36px;
     /* 138.462% */
     letter-spacing: 0.52px;
+    margin-bottom: 0.5rem;
 }
 
-.fundraising-cta-text-info, .volunteer-cta-text-info {
-    display: flex;
-    padding: 16px 0;
-    align-items: center;
-    gap: 32px;
-    align-self: stretch;
-    border-radius: 15px;
-}
-
-.fundraising-cta-text-info svg, .volunteer-cta-text-info svg {
-    width: 75px;
-    height: 75px;
-    fill: var(--Cyan-CFASA, #62C6C6);
-}
-
-.fundraising-cta-text-info div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    flex: 1 0 0;
-}
-
-.fundraising-cta-text-info div p {
-    align-self: stretch;
+.fundraising-cta-intro p {
+    max-width: 6ch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Paragraph */
     font-family: Arial;
@@ -603,39 +567,36 @@ main {
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
+    margin: 0;
 }
 
-.fundraising-cta-text-info span, .volunteer-cta-text-info span {
-    color: var(--Navy-Blue-CFASA, #0C2542);
-    font-family: Arial;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 26px;
+
+.fundraising-cta-contact p {
+    margin: 0;
 }
 
-.fundraising-cta-text-info button, .volunteer-cta-text-info button {
+.fundraising-cta-contact-spec {
     display: flex;
-    width: 250px;
-    height: 44px;
-    min-width: 90px;
-    max-width: 300px;
-    padding: 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    max-width: 60ch;
+}
+
+.fundraising-cta button {
     border-radius: 24px;
     background: var(--Navy-Blue-CFASA, #0C2542);
     /* Little Shadow */
     box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    min-width: 90px;
+    max-width: 250px;
+    width: 100%;
     color: var(--White, #FCFDFE);
     /* Button Label */
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 80%;
-    /* 11.2px */
+    line-height: normal;
     letter-spacing: 0.42px;
 }
 
@@ -1261,15 +1222,99 @@ main {
     align-self: stretch;
 }
 
-
 /* 
 Queries
 */
 
 @media (max-width: 767px) {
 
-    /* Volunteer Introduction */
+    /* Fundraiser page Queries */
+    .fundraiser-hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+        gap: 24px;
+        height: auto;
+    }
 
+    .fundraiser-hero-text h2 {
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: 2px;
+    }
+
+    .fundraiser-hero-text p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .fundraiser-hero-image {
+        width: 100%;
+    }
+
+    .fundraiser-hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* Fundraiser Gallery */
+    .fundraiser-gallery {
+        padding: 40px 24px;
+        gap: 24px;
+    }
+
+    .fundraiser-gallery-title h2 {
+        font-size: 28px;
+        line-height: 110%;
+        padding: 12px 0;
+    }
+
+    /* Fundraising CTA Section */
+    .fundraising-cta-section {
+        padding: 0 24px 40px;
+        gap: 24px;
+    }
+
+    .fundraising-cta {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .fundraising-cta-text-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .fundraising-cta-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .fundraising-cta-intro h3,
+    .fundraising-cta-contact-spec h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .fundraising-cta-intro p {
+        max-width: 100%;
+    }
+
+    .fundraising-cta-contact-spec {
+        max-width: 100%;
+    }
+
+    .fundraising-cta button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+
+    /* Volunteer Queries */
     .volunteer-intro {
         display: flex;
         height: auto;
