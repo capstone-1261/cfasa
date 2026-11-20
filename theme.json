@@ -190,8 +190,7 @@
       },
       "button": {
         "color": {
-          "text": "#FFFFFF",
-          "background": "#0C2542"
+          "text": "#FFFFFF"
         },
         "typography": {
           "fontSize": "var(--wp--preset--font-size--button-label)",
@@ -210,7 +209,6 @@
         },
         ":hover": {
           "color": {
-            "text": "#FFFFFF",
             "background": "#CF0000"
           }
         }

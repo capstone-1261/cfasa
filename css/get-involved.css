@@ -1,6 +1,7 @@
 /* Get involved main page css */
 main {
     padding: 0;
+    background-color: var(--White, #FCFDFE);
 }
 
 /* Get involved donation page css */
@@ -584,7 +585,7 @@ main {
     fill: var(--Cyan-CFASA, #62C6C6);
 }
 
-.fundraising-cta-text-info div, .volunteer-cta-text-info div {
+.fundraising-cta-text-info div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -592,7 +593,7 @@ main {
     flex: 1 0 0;
 }
 
-.fundraising-cta-text-info div p, .volunteer-cta-text-info div p {
+.fundraising-cta-text-info div p {
     align-self: stretch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Paragraph */
@@ -644,7 +645,7 @@ main {
     display: flex;
     height: 353px;
 
-    padding: 32px;
+    padding: 0 32px 32px 32px;
     align-items: flex-end;
     gap: 32px;
     align-self: stretch;
@@ -712,7 +713,7 @@ main {
 
 .volunteer-page-content-container {
     display: flex;
-    padding: 32px;
+    padding: 0 32px 32px 32px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -816,7 +817,6 @@ main {
 
 .volunteer-quote {
     max-width: 994px;
-    height: 430px;
 }
 
 .volunteer-quote-image img {
@@ -837,13 +837,11 @@ main {
 
 .quote-text {
     max-width: 473.216px;
-    height: 428px;
 }
 
 .quote-text p:first-of-type {
     display: flex;
     max-width: 473.216px;
-    height: 428px;
     flex-direction: column;
     justify-content: center;
     color: var(--Navy-Blue-CFASA, #0C2542);
@@ -860,11 +858,9 @@ main {
 .quote-special {
     display: flex;
     max-width: 375.168px;
-    height: 64.903px;
     flex-direction: column;
     justify-content: center;
     color: var(--Navy-Blue-CFASA, #0C2542);
-
     /* Heading 3 */
     font-family: Montserrat;
     font-size: 18px;
@@ -885,6 +881,10 @@ main {
     border-radius: 20px;
     border: 1px solid var(--Cyan-CFASA, #62C6C6);
     background: #FFF;
+}
+
+.volunteer-cta-text-info {
+    justify-content: space-between;
 }
 
 .volunteer-cta-intro {
@@ -924,6 +924,22 @@ main {
     text-wrap: nowrap;
 }
 
+.volunteer-cta-contact-spec {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+}
+
+.volunteer-cta-contact-spec p:last-of-type {
+    border-left: 1px solid var(--Cyan-CFASA, #62C6C6);
+    display: flex;
+    padding-left: 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .uni-org {
     display: flex;
     height: 439px;
@@ -938,7 +954,6 @@ main {
 .uni-org h2 {
     display: flex;
     padding: 16px 0;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
@@ -1088,7 +1103,6 @@ main {
 .translators h2 {
     display: flex;
     padding: 16px 0;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
@@ -1104,6 +1118,7 @@ main {
     /* 37.08px */
     font-variant: all-small-caps;
     letter-spacing: 1.08px;
+    margin-bottom: 0;
 }
 
 .translators-container {
@@ -1113,8 +1128,6 @@ main {
     align-items: flex-start;
     gap: 16px;
     align-self: stretch;
-
-
 }
 
 .translators-text {
@@ -1133,6 +1146,7 @@ main {
     line-height: 30px;
     /* 166.667% */
     letter-spacing: 0.18px;
+    margin-bottom: 0;
 }
 
 .translators-text p {
@@ -1145,6 +1159,7 @@ main {
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
+    margin-bottom: 0;
 }
 
 .translators button {
@@ -1165,6 +1180,7 @@ main {
     gap: 8px;
     flex: 1 0 0;
     align-self: stretch;
+    color: var(--White, #FCFDFE);
 }
 
 .volunteer-stories {
@@ -1179,7 +1195,6 @@ main {
 .volunteer-stories h2 {
     display: flex;
     padding: 16px 0;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
@@ -1230,7 +1245,6 @@ main {
 .application-form h2 {
     display: flex;
     padding: 16px 0;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;

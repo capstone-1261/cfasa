@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_template_part('parts/hero-banner-basic'); ?>
+
 
 <?php
 $volunteer_stories = new WP_Query(array(
@@ -115,7 +115,7 @@ $volunteer_stories = new WP_Query(array(
 
                     <div class="volunteer-cta-contact">
                         <h3>For inquiries or more information, please contact Lindsay Rothman.</h3>
-                        <div>
+                        <div class="volunteer-cta-contact-spec">
                             <p>Email: <span>lrothman@centreforautismab.ca</span></p>
                             <p>Phone: <span>(780) 488-6600 ext. 226</span></p>
                         </div>
