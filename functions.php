@@ -134,7 +134,8 @@ function cfasa_get_involved_styles() {
 
     if ( is_page(array(
         'volunteer',
-        'get-involved'
+        'get-involved',
+        'fundraisers'
     ) ) ) {
 
         wp_enqueue_style(
