@@ -230,17 +230,17 @@ main {
 
 .sponsorship-head {
     display: flex;
-    width: 1438px;
-    height: 353px;
-    max-width: 1440px;
+    max-width: 100%;
     padding: 32px;
     align-items: flex-end;
     gap: 32px;
+    align-self: stretch;
     border-radius: 24px 24px 0 0;
-    background: var(--White, #FCFDFE);
 }
 
+
 .sponsorship-head-text h2 {
+    margin-bottom: 0;
     align-self: stretch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display Large */
@@ -254,6 +254,10 @@ main {
     text-transform: uppercase;
 }
 
+.sponsorship-head-text p {
+    margin: 0;
+}
+
 .sponsorship-head-image img {
     flex: 1 0 0;
     align-self: stretch;
@@ -261,34 +265,12 @@ main {
     background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
-.fundraising-events {
+.sponsorship-title {
     display: flex;
-    padding: 64px 32px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 64px;
-    align-self: stretch;
-    background: var(--White, #FCFDFE);
-}
-
-.sponsorship-and-partnership {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-}
-
-.fundraising-title {
-    display: flex;
-    padding: 16px 0;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
     border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
-}
-
-.fundraising-title h2 {
     flex: 1 0 0;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display - Smaller */
@@ -302,9 +284,39 @@ main {
     letter-spacing: 1.08px;
 }
 
+.sponsorship-title h2 {
+    flex: 1 0 0;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Display - Smaller */
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%;
+    /* 37.08px */
+    font-variant: all-small-caps;
+    letter-spacing: 1.08px;
+    margin-top: 0;
+}
+
+.sponsorship-events {
+    display: flex;
+    padding: 64px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+    align-self: stretch;
+    margin-top: 0;
+}
+
+.sponsorship-and-partnership {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
 .sponsorships h3, .partnerships h3 {
-    width: 592px;
-    height: 30px;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Heading 3 */
     font-family: Montserrat;
@@ -325,7 +337,7 @@ main {
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
-    width: 592px;
+    max-width: 60ch;
 }
 
 .sponsorship-cta {
@@ -333,20 +345,25 @@ main {
     padding: 32px;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     align-self: stretch;
     border-radius: 20px;
     border: 1px solid var(--Cyan-CFASA, #62C6C6);
-    background: var(--White, #FCFDFE);
+    background: #FFF;
 }
 
-.cta-text {
+.sponsorship-cta-text-info {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.sponsorship-cta-intro {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.cta-text h2 {
+.sponsorship-cta-intro h2 {
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Heading 2 */
     font-family: Montserrat;
@@ -356,10 +373,10 @@ main {
     line-height: 36px;
     /* 138.462% */
     letter-spacing: 0.52px;
-    width: 753.639px;
+    margin: 0;
 }
 
-.cta-text p {
+.sponsorship-cta-intro p {
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Paragraph */
     font-family: Arial;
@@ -368,36 +385,22 @@ main {
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
-    width: 592px;
+    margin-top: 0;
+
 }
 
-.sponsorship-cta-links {
+.sponsorship-cta-flex {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    flex: 1 0 0;
+    gap: 32px;
+    align-items: center;
 }
 
-.sponsorship-cta-icon {
-    width: 75px;
-    height: 75px;
-    fill: var(--Cyan-CFASA, #62C6C6);
+.sponsorship-cta-contact p {
+    margin: 0;
+    text-wrap: nowrap;
 }
 
-.sponsorship-cta-links p {
-    align-self: stretch;
-    color: var(--Navy-Blue-CFASA, #0C2542);
-    /* Paragraph */
-    font-family: Arial;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 26px;
-    /* 162.5% */
-}
-
-.sponsorship-cta-links span {
+.sponsorship-cta-contact-spec span {
     color: var(--Navy-Blue-CFASA, #0C2542);
     font-family: Arial;
     font-size: 16px;
@@ -406,28 +409,22 @@ main {
     line-height: 26px;
 }
 
-.sponsorship-cta-links button {
-    display: flex;
-    width: 250px;
-    height: 44px;
-    min-width: 90px;
-    max-width: 300px;
-    padding: 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+.sponsorship-cta button {
     border-radius: 24px;
     background: var(--Navy-Blue-CFASA, #0C2542);
     /* Little Shadow */
     box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    min-width: 90px;
+    max-width: 250px;
+    width: 100%;
     color: var(--White, #FCFDFE);
     /* Button Label */
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 80%;
-    /* 11.2px */
+    line-height: normal;
     letter-spacing: 0.42px;
 }
 
@@ -1227,6 +1224,115 @@ Queries
 */
 
 @media (max-width: 767px) {
+
+
+    /* Sponsorship Queries */
+    .sponsorship-head {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+        gap: 24px;
+        height: auto;
+    }
+
+    .sponsorship-head-text {
+        width: 100%;
+    }
+
+    .sponsorship-head-text h2 {
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: 2px;
+    }
+
+    .sponsorship-head-image {
+        width: 100%;
+    }
+
+    .sponsorship-head-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* Sponsorship Title */
+    .sponsorship-title {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .sponsorship-title h2 {
+        font-size: 28px;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+    }
+
+    /* Sponsorship Events */
+    .sponsorship-events {
+        padding: 40px 24px;
+        gap: 32px;
+    }
+
+    .sponsorship-and-partnership {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .sponsorships,
+    .partnerships {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .sponsorships p,
+    .partnerships p {
+        max-width: 100%;
+    }
+
+    /* Sponsorship CTA */
+    .sponsorship-cta {
+        padding: 24px;
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sponsorship-cta-text-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .sponsorship-cta-intro h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .sponsorship-cta-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .sponsorship-cta-contact {
+        width: 100%;
+    }
+
+    .sponsorship-cta-contact p {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .sponsorship-cta-contact-spec {
+        max-width: 100%;
+    }
+
+    .sponsorship-cta button {
+        width: 100%;
+        max-width: 250px;
+    }
 
     /* Fundraiser page Queries */
     .fundraiser-hero {
