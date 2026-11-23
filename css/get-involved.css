@@ -4,6 +4,33 @@ main {
     background-color: var(--White, #FCFDFE);
 }
 
+/* css banner asset */
+/* cicles */
+
+.fundraising-cta, .sponsorship-cta,
+.careers-cta, .council-cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.decorative-circles {
+    position: absolute;
+    width: 504px;
+    height: 462px;
+    right: -45px;
+    bottom: -165px;
+    background-image: url('../images/decorative-circles.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 0;
+}
+
+.fundraising-cta-flex, .sponsorship-cta-flex,
+.careers-cta-flex, .council-cta-flex {
+    position: relative;
+    z-index: 1;
+}
+
 /* HEADER BANNER CSS */
 .donation-intro, .careers-intro {
     display: flex;
@@ -735,6 +762,10 @@ main {
     /* 138.462% */
     letter-spacing: 0.52px;
     margin-bottom: 0.5rem;
+}
+
+.fundraising-cta-intro h3 {
+    margin-top: 0;
 }
 
 .fundraising-cta-intro p {
@@ -1534,6 +1565,81 @@ main {
 .careers-cta-contact p {
     margin: 0;
     text-wrap: nowrap;
+}
+
+
+/* council page CSS */
+
+
+
+
+.council-cta {
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 20px;
+    border: 1px solid var(--Cyan-CFASA, #62C6C6);
+    background: #FFF;
+}
+
+.council-cta-text-info {
+    justify-content: space-between;
+}
+
+.council-cta-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.council-cta-intro h2 {
+    max-width: 753.639px;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Heading 2 */
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    /* 138.462% */
+    letter-spacing: 0.52px;
+}
+
+.council-cta-intro p {
+    max-width: 592px;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Paragraph */
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    /* 162.5% */
+    margin: 0;
+}
+
+.council-cta-contact p {
+    margin: 0;
+    text-wrap: nowrap;
+}
+
+.council-cta-contact-spec {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+}
+
+.council-cta-contact-spec p:last-of-type {
+    border-left: 1px solid var(--Cyan-CFASA, #62C6C6);
+    display: flex;
+    padding-left: 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 
