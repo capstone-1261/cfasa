@@ -1,5 +1,6 @@
 <?php
 
+get_template_part( 'parts/hero-banner-minimal' );
 get_header();
 ?>
 

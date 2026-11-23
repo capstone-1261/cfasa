@@ -1,6 +1,7 @@
 <?php
 
 get_header();
+get_template_part('parts/hero-banner-minimal');
 ?>
 
 <main class="cfasa-ps" data-page="community-social-recreation-programs" id="cfasa-ps">

@@ -1,6 +1,8 @@
 <?php
 
 get_header();
+<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
+
 ?>
 
 <main class="cfasa-ps" data-page="diagnostic-services" id="cfasa-ps">
