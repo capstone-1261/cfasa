@@ -135,7 +135,10 @@ function cfasa_get_involved_styles() {
     if ( is_page(array(
         'volunteer',
         'get-involved',
-        'fundraisers'
+        'fundraisers',
+        'sponsorships',
+        'donate',
+        'careers'
     ) ) ) {
 
         wp_enqueue_style(

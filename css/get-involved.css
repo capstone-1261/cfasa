@@ -4,22 +4,19 @@ main {
     background-color: var(--White, #FCFDFE);
 }
 
-/* Get involved donation page css */
-.donation-container {}
-
-.donation-intro {
+/* HEADER BANNER CSS */
+.donation-intro, .careers-intro {
     display: flex;
-    width: 1438px;
-    height: 353px;
-    max-width: 1440px;
+    max-width: 100%;
     padding: 32px;
     align-items: flex-end;
     gap: 32px;
+    align-self: stretch;
     border-radius: 24px 24px 0 0;
-    background: var(--White, #FCFDFE);
 }
 
-.donation-intro h2 {
+.donation-head-text h2, .careers-head-text h2 {
+    margin-bottom: 0;
     align-self: stretch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display Large */
@@ -33,9 +30,20 @@ main {
     text-transform: uppercase;
 }
 
-.donation-intro p:first-of-type {
+.donation-head-text p, .careeers-head-text p {
+    margin: 0;
+}
+
+.donation-head-image img, .careers-head-image img {
+    flex: 1 0 0;
     align-self: stretch;
+    border-radius: 24px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.careers-head-text h3 {
     color: var(--cyan-darker-legible-on-light-bg, #189696);
+    align-self: stretch;
     /* Hero Subtitle */
     font-family: Montserrat;
     font-size: 21px;
@@ -43,27 +51,122 @@ main {
     font-weight: 400;
     line-height: 30px;
     /* 142.857% */
+    margin: 0;
 }
 
-.donate-introo p:last-of-type {
+/* get involved main page */
+.get-involved-cards {
+    display: inline-grid;
+    row-gap: 16px;
+    column-gap: 16px;
     align-self: stretch;
-    color: var(--Navy-Blue-CFASA, #0C2542);
-    /* Paragraph */
-    font-family: Arial;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 26px;
-    /* 162.5% */
+    grid-template-rows: repeat(2, fit-content(100%));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: row;
 }
 
-.donate-intro-image {
+.get-involved-card {
+    display: flex;
+    height: 324px;
+    max-width: 720px;
+    max-height: 426px;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-row: span 1;
+    grid-column: span 1;
+    justify-self: stretch;
+    border-radius: 20px;
+    border: 1px solid rgba(33, 62, 91, 0.20);
+}
+
+.get-involved-card img {
+    height: 150px;
+    flex-shrink: 0;
+    align-self: stretch;
+    background: linear-gradient(0deg, rgba(12, 37, 66, 0.50) 0%, rgba(12, 37, 66, 0.50) 100%), url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.get-involved-card-body {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
     flex: 1 0 0;
     align-self: stretch;
-    border-radius: 24px;
-    background: url(<path-to-image>) lightgray -809.562px 0px / 207.942% 100% no-repeat;
+    border-radius: 0 0 16px 16px;
+    background: #0C2542;
+    gap: 1rem;
 }
 
+.get-involved-card-text {
+    display: flex;
+    padding-bottom: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.get-involved-card-text h2 {
+    color: #FFF;
+    /* Heading 2 */
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    /* 138.462% */
+    letter-spacing: 0.52px;
+    align-self: stretch;
+    margin: 0;
+}
+
+.get-involved-card-text p {
+    color: #FFF;
+    /* Small Condensed */
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    /* 146.154% */
+    margin: 0;
+}
+
+.get-involved-card-body button {
+    display: flex;
+    height: 44px;
+    min-width: 90px;
+    max-width: 300px;
+    padding: 12px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    border-radius: 24px;
+    border: 1px solid rgba(239, 242, 248, 0.10);
+    background: var(--Navy-Blue-CFASA, #0C2542);
+
+    /* Little Shadow */
+    box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+    color: #EFF2F8;
+
+    /* Button Label */
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.42px;
+}
+
+.get-involved-card svg {
+    width: 9.988px;
+    height: 9.429px;
+    fill: #62C6C6;
+}
+
+/* Get involved donation page css */
 .donating-section {
     display: flex;
     padding: 64px 32px;
@@ -72,6 +175,13 @@ main {
     gap: 80px;
     align-self: stretch;
     background: var(--White, #FCFDFE);
+}
+
+.donation-secondary {
+    display: flex;
+    max-width: 982px;
+    align-items: center;
+    gap: 32px;
 }
 
 .donation-secondary-image {
@@ -119,6 +229,10 @@ main {
     line-height: 20px;
 }
 
+.donation-card-section {
+    max-width: 100%;
+}
+
 .donation-card-section-title {
     display: flex;
     padding: 16px 0;
@@ -129,7 +243,7 @@ main {
     border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
 }
 
-.donation-card-section h2 {
+.donation-card-section-title h2 {
     flex: 1 0 0;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display - Smaller */
@@ -141,32 +255,101 @@ main {
     /* 37.08px */
     font-variant: all-small-caps;
     letter-spacing: 1.08px;
+    margin: 0;
 }
 
 .donation-cards {
     display: flex;
-    min-width: 260px;
-    max-width: 592px;
-    padding: 32px;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 80px 0;
     gap: 16px;
-    flex: 1 0 0;
     align-self: stretch;
-    border-radius: 20px;
-    background: var(--Yellow-Pastel, #FFF7E6);
-    /* Little Shadow */
-    box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.card-text {
-    border-radius: 20px;
+.donate-info {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.donate-info p,
+.donate-info span,
+.donate-info a {
+    overflow-wrap: anywhere;
+}
+
+.note-letter {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    text-align: center;
+    /* Heading 2 */
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    /* 138.462% */
+    letter-spacing: 0.52px;
+}
+
+.card-yellow {
     background: var(--Yellow-Pastel, #FFF7E6);
-    /* Little Shadow */
+}
+
+.card-yellow .note-circle {
+    display: flex;
+    width: 61px;
+    height: 61px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 200px;
+    background: var(--Yellow-Pastel-Contrast, #FFE4A3);
+}
+
+.card-blue {
+    background: var(--Cyan-Pastel, #E9F8F5);
+}
+
+.card-blue .note-circle {
+    display: flex;
+    width: 61px;
+    height: 61px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 200px;
+    background: var(--Cyan-Pastel-Contrast, #BEEFEB);
+}
+
+.card-red {
+    background: var(--Red-Pastel, #FDEDED);
+}
+
+.card-red .note-circle {
+    display: flex;
+    width: 61px;
+    height: 61px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 200px;
+    background: var(--Red-Pastel-Contrast, #FFCECF);
+}
+
+.donation-card {
     box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
     border-radius: 24px;
-    border: 1px solid #FFD02D;
-    background: #FFF;
+    display: flex;
+    max-width: none;
+    width: auto;
+    padding: 32px;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1 1 0;
+    box-sizing: border-box;
 }
 
 .card-text h3 {
@@ -230,17 +413,17 @@ main {
 
 .sponsorship-head {
     display: flex;
-    width: 1438px;
-    height: 353px;
-    max-width: 1440px;
+    max-width: 100%;
     padding: 32px;
     align-items: flex-end;
     gap: 32px;
+    align-self: stretch;
     border-radius: 24px 24px 0 0;
-    background: var(--White, #FCFDFE);
 }
 
+
 .sponsorship-head-text h2 {
+    margin-bottom: 0;
     align-self: stretch;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display Large */
@@ -254,6 +437,10 @@ main {
     text-transform: uppercase;
 }
 
+.sponsorship-head-text p {
+    margin: 0;
+}
+
 .sponsorship-head-image img {
     flex: 1 0 0;
     align-self: stretch;
@@ -261,34 +448,12 @@ main {
     background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
-.fundraising-events {
+.sponsorship-title {
     display: flex;
-    padding: 64px 32px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 64px;
-    align-self: stretch;
-    background: var(--White, #FCFDFE);
-}
-
-.sponsorship-and-partnership {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-}
-
-.fundraising-title {
-    display: flex;
-    padding: 16px 0;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     align-self: stretch;
     border-bottom: 1px solid var(--Navy-Blue-CFASA, #0C2542);
-}
-
-.fundraising-title h2 {
     flex: 1 0 0;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Display - Smaller */
@@ -302,9 +467,39 @@ main {
     letter-spacing: 1.08px;
 }
 
+.sponsorship-title h2 {
+    flex: 1 0 0;
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Display - Smaller */
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%;
+    /* 37.08px */
+    font-variant: all-small-caps;
+    letter-spacing: 1.08px;
+    margin-top: 0;
+}
+
+.sponsorship-events {
+    display: flex;
+    padding: 64px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+    align-self: stretch;
+    margin-top: 0;
+}
+
+.sponsorship-and-partnership {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
 .sponsorships h3, .partnerships h3 {
-    width: 592px;
-    height: 30px;
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Heading 3 */
     font-family: Montserrat;
@@ -325,7 +520,7 @@ main {
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
-    width: 592px;
+    max-width: 60ch;
 }
 
 .sponsorship-cta {
@@ -333,20 +528,25 @@ main {
     padding: 32px;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     align-self: stretch;
     border-radius: 20px;
     border: 1px solid var(--Cyan-CFASA, #62C6C6);
-    background: var(--White, #FCFDFE);
+    background: #FFF;
 }
 
-.cta-text {
+.sponsorship-cta-text-info {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.sponsorship-cta-intro {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.cta-text h2 {
+.sponsorship-cta-intro h2 {
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Heading 2 */
     font-family: Montserrat;
@@ -356,10 +556,10 @@ main {
     line-height: 36px;
     /* 138.462% */
     letter-spacing: 0.52px;
-    width: 753.639px;
+    margin: 0;
 }
 
-.cta-text p {
+.sponsorship-cta-intro p {
     color: var(--Navy-Blue-CFASA, #0C2542);
     /* Paragraph */
     font-family: Arial;
@@ -368,36 +568,22 @@ main {
     font-weight: 400;
     line-height: 26px;
     /* 162.5% */
-    width: 592px;
+    margin-top: 0;
+
 }
 
-.sponsorship-cta-links {
+.sponsorship-cta-flex {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    flex: 1 0 0;
+    gap: 32px;
+    align-items: center;
 }
 
-.sponsorship-cta-icon {
-    width: 75px;
-    height: 75px;
-    fill: var(--Cyan-CFASA, #62C6C6);
+.sponsorship-cta-contact p {
+    margin: 0;
+    text-wrap: nowrap;
 }
 
-.sponsorship-cta-links p {
-    align-self: stretch;
-    color: var(--Navy-Blue-CFASA, #0C2542);
-    /* Paragraph */
-    font-family: Arial;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 26px;
-    /* 162.5% */
-}
-
-.sponsorship-cta-links span {
+.sponsorship-cta-contact-spec span {
     color: var(--Navy-Blue-CFASA, #0C2542);
     font-family: Arial;
     font-size: 16px;
@@ -406,28 +592,22 @@ main {
     line-height: 26px;
 }
 
-.sponsorship-cta-links button {
-    display: flex;
-    width: 250px;
-    height: 44px;
-    min-width: 90px;
-    max-width: 300px;
-    padding: 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+.sponsorship-cta button {
     border-radius: 24px;
     background: var(--Navy-Blue-CFASA, #0C2542);
     /* Little Shadow */
     box-shadow: 0 6px 16.1px 0 rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    min-width: 90px;
+    max-width: 250px;
+    width: 100%;
     color: var(--White, #FCFDFE);
     /* Button Label */
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 80%;
-    /* 11.2px */
+    line-height: normal;
     letter-spacing: 0.42px;
 }
 
@@ -1222,11 +1402,407 @@ main {
     align-self: stretch;
 }
 
+/* Get involved Careers Css */
+
+.careers-content {
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    background: var(--White, #FCFDFE);
+}
+
+.openings-title {
+    display: flex;
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--CFASA-Color-Gradient-Subtle, rgba(207, 0, 0, 0.50));
+    color: var(--Navy-Blue-CFASA, #0C2542);
+}
+
+.openings-title h2 {
+    /* Display - Smaller */
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%;
+    /* 37.08px */
+    font-variant: all-small-caps;
+    letter-spacing: 1.08px;
+    flex: 1 0 0;
+    margin: 0;
+}
+
+.openings-split {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}
+
+.openings-edmonton, .openings-calgary {
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 24px;
+    background: var(--Cyan-Pastel, #E9F8F5);
+}
+
+.openings-edmonton h3, .openings-calgary h3 {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--cyan-darker-legible-on-light-bg, #189696);
+    width: 100%;
+    color: #000;
+    /* Heading 3 */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    /* 166.667% */
+    letter-spacing: 0.18px;
+}
+
+.careers-cta {
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    border-radius: 20px;
+    border: 1px solid var(--Cyan-CFASA, #62C6C6);
+    background: #FFF;
+}
+
+.careers-cta-text-info {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.careers-cta-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.careers-cta-intro h2 {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Heading 2 */
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    /* 138.462% */
+    letter-spacing: 0.52px;
+    margin: 0;
+}
+
+.careers-cta-intro p {
+    color: var(--Navy-Blue-CFASA, #0C2542);
+    /* Paragraph */
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    /* 162.5% */
+    margin-top: 0;
+
+}
+
+.careers-cta-flex {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.careers-cta-contact p {
+    margin: 0;
+    text-wrap: nowrap;
+}
+
+
 /* 
 Queries
 */
 
 @media (max-width: 767px) {
+
+    /* main get involved page queries */
+    .get-involved-cards {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        gap: 24px;
+    }
+
+    .get-involved-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 324px;
+        max-height: none;
+        box-sizing: border-box;
+    }
+
+    .get-involved-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .get-involved-card-body {
+        flex: 1;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .get-involved-card-text h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .get-involved-card-text p {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .get-involved-card-body button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Donation page queries */
+    .donation-intro {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+        gap: 24px;
+        height: auto;
+    }
+
+    .donation-head-text {
+        width: 100%;
+    }
+
+    .donation-head-text h2 {
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: 2px;
+    }
+
+    .donation-head-image {
+        width: 100%;
+    }
+
+    .donation-head-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* Donating Section */
+    .donating-section {
+        padding: 40px 24px;
+        gap: 48px;
+    }
+
+    /* Secondary Donation Section */
+    .donation-secondary {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .donation-secondary-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        flex-shrink: 1;
+        align-self: center;
+    }
+
+    .donation-secondary-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .donation-secondary-text h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    /* Donation Card Section */
+    .donation-card-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .donation-card-section-title {
+        padding: 12px 0;
+    }
+
+    .donation-card-section-title h2 {
+        font-size: 28px;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+    }
+
+    /* Donation Cards */
+
+    .card-text h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .donate-info {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .donate-info p,
+    .donate-info span,
+    .donate-info a {
+        overflow-wrap: anywhere;
+    }
+
+    .donate-info-bold {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .note-letter {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    /* Sponsorship Queries */
+    .sponsorship-head {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+        gap: 24px;
+        height: auto;
+    }
+
+    .sponsorship-head-text {
+        width: 100%;
+    }
+
+    .sponsorship-head-text h2 {
+        font-size: 32px;
+        line-height: 110%;
+        letter-spacing: 2px;
+    }
+
+    .sponsorship-head-image {
+        width: 100%;
+    }
+
+    .sponsorship-head-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* Sponsorship Title */
+    .sponsorship-title {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .sponsorship-title h2 {
+        font-size: 28px;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+    }
+
+    /* Sponsorship Events */
+    .sponsorship-events {
+        padding: 40px 24px;
+        gap: 32px;
+    }
+
+    .sponsorship-and-partnership {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .sponsorships,
+    .partnerships {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .sponsorships p,
+    .partnerships p {
+        max-width: 100%;
+    }
+
+    /* Sponsorship CTA */
+    .sponsorship-cta {
+        padding: 24px;
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sponsorship-cta-text-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .sponsorship-cta-intro h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .sponsorship-cta-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .sponsorship-cta-contact {
+        width: 100%;
+    }
+
+    .sponsorship-cta-contact p {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .sponsorship-cta-contact-spec {
+        max-width: 100%;
+    }
+
+    .sponsorship-cta button {
+        width: 100%;
+        max-width: 250px;
+    }
 
     /* Fundraiser page Queries */
     .fundraiser-hero {
@@ -1340,9 +1916,6 @@ Queries
         object-fit: cover;
     }
 
-
-    /* Main Page Content */
-
     .volunteer-page-content-container {
         padding: 1.5rem;
         gap: 40px;
@@ -1365,7 +1938,6 @@ Queries
     .volunteer div p {
         max-width: 100%;
     }
-
 
     /* Volunteer Information Rows */
 
@@ -1506,7 +2078,6 @@ Queries
         gap: 20px;
     }
 
-
     /* Application Form */
 
     .application-form-container {
@@ -1514,12 +2085,109 @@ Queries
         padding: 1.25rem;
     }
 
+    /* careers page queries */
+
+    .careers-intro {
+        display: flex;
+        height: auto;
+        padding: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .careers-head-text {
+        max-width: 50ch;
+    }
+
+    .careers-head-text h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .careers-head-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .careers-content {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    /* Openings Title */
+    .openings-title {
+        padding: 12px 0;
+    }
+
+    .openings-title h2 {
+        font-size: 28px;
+        line-height: 110%;
+        letter-spacing: 0.5px;
+    }
+
+    /* Job Openings */
+    .openings-split {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .openings-edmonton,
+    .openings-calgary {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+
+    .openings-edmonton h3,
+    .openings-calgary h3 {
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    /* Careers CTA */
+    .careers-cta {
+        padding: 24px;
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .careers-cta-text-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .careers-cta-intro h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .careers-cta-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .careers-cta-contact {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .careers-cta-contact p {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
 }
 
-
-/* ==========================================
-   TABLET WIDTH FIXES
-   ========================================== */
+/* TABLET WIDTH FIXES*/
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -1587,4 +2255,17 @@ Queries
         flex-wrap: wrap;
     }
 
+}
+
+/* donation cards custom stack */
+@media (max-width: 1024px) {
+    .donation-cards {
+        flex-direction: column;
+    }
+
+    .donation-card {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
 }

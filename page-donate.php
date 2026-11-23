@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part( 'parts/hero-banner-basic' ); ?>
 
 <main>
 
@@ -22,17 +21,16 @@
 </section>
 
 <section class="donation-container">
-    <div>
-        <div class="donation-intro">
-            <div>
-                <h2>DONATE</h2>
-                <p>Our work is made possible by the generosity of our donors, sponsors, and partners.</p>
-                <p>Make a general donation or contribute to a fundraising campaign or event in support of the Centre for Autism Services Alberta programs or services.</p>
+        <section class="donation-intro">
+            <div class="donation-head-text">
+                <h2>SPONSORSHIPS & PARTNERSHIPS</h2>
+                <p>Commited and Conected to Your Community</p>
+                <p>Become a Sponsor or Partner!</p>
             </div>
-            <div class="donation-intro-image">
+            <div class="donation-head-image">
                 /* image goes here */
-            </div>
-        </div>
+            </div>  
+        </section>
     
     <section class="donating-section">
         <div class="donation-secondary">
@@ -54,8 +52,10 @@
                 <h2>MAKE A DONATION TODAY!</h2>
             </div>
             <div class="donation-cards">
-                <div class="dontation-card">
-                    /* Icon goes here */-
+                <div class="donation-card card-yellow">
+                    <div class="note-circle">
+                        <p class="note-letter">i</p>
+                    </div>
                     <div class="card-text">
                         <h3>Our Canadian Registered Charity Number:</h3>
                         <div class="donate-info">
@@ -65,8 +65,10 @@
                     </div>
                 </div>
 
-                <div class="dontation-card">
-                    /* Icon goes here */-
+                <div class="donation-card card-blue">
+                    <div class="note-circle">
+                        <p class="note-letter">i</p>
+                    </div>
                     <div class="card-text">
                         <h3>Donate Online</h3>
                         <div class="donate-info">
@@ -76,8 +78,10 @@
                     </div>
                 </div>
 
-                <div class="dontation-card">
-                    /* Icon goes here */-
+                <div class="donation-card card-red">
+                    <div class="note-circle">
+                        <p class="note-letter">i</p>
+                    </div>
                     <div class="card-text">
                         <h3>Donate In Person</h3>
                         <div class="donate-info">
