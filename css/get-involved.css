@@ -19,7 +19,7 @@ main {
     height: 462px;
     right: -45px;
     bottom: -165px;
-    background-image: url('../images/decorative-circles.svg');
+    background-image: url('../img/decorative-circles.svg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 0;
