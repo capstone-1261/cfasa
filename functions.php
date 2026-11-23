@@ -137,7 +137,8 @@ function cfasa_get_involved_styles() {
         'get-involved',
         'fundraisers',
         'sponsorships',
-        'donate'
+        'donate',
+        'careers'
     ) ) ) {
 
         wp_enqueue_style(
