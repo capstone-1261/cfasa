@@ -116,7 +116,7 @@ function cfasa_programs_services_styles() {
 
         wp_enqueue_style(
             'cfasa-programs-services',
-            get_theme_file_uri('/assets/css/program-services.css'),
+            get_theme_file_uri('/css/program-services.css'),
             array('centre-autism-style'),
             '1.0.0'
         );
