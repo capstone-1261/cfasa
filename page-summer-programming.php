@@ -1,7 +1,7 @@
 <?php
 
 get_header();
-get_template_part('parts/hero-banner-basic'); ?>
+get_template_part('parts/hero-banner-minimal'); ?>
 
 <main id="main-content" class="ps-main">
     <section class="ps-top" aria-label="Programs and services navigation">

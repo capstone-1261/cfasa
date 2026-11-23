@@ -1,5 +1,5 @@
 <?php
-get_template_part( 'parts/hero-banner-basic' );
+get_template_part( 'parts/hero-banner-minimal' );
 get_header();
 ?>
 <main id="main-content" class="ps-main">

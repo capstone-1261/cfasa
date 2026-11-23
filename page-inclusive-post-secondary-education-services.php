@@ -1,6 +1,6 @@
 <?php
 get_header();
-get_template_part( 'parts/hero-banner-basic' );
+get_template_part( 'parts/hero-banner-minimal' );
 ?>
 
 <main id="main-content" class="ps-main">

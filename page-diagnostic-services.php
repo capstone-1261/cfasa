@@ -1,7 +1,7 @@
 <?php
 
 get_header();
-<?php get_template_part( 'parts/hero-banner-basic' ); ?>
+<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
 
 ?>
 <main id="main-content" class="ps-main">
