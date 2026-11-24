@@ -43,7 +43,9 @@
 <section class="fundraising-cta-section">
     <h2>FUNDRAISE FOR THE CENTRE</h2>
     <div class="fundraising-cta">
-    
+        <div class="decorative-circles">
+
+        </div>
         <div class="fundraising-cta-text">
             <div class="fundraising-cta-intro">  
                 <h3>Did you know you can host your very own fundraiser for the Centre?</h3>
@@ -68,8 +70,10 @@
     </div>
     
         <div class="fundraising-cta">
-            <div class="fundraising-cta-flex">
+            <div class="decorative-circles">
 
+        </div>
+            <div class="fundraising-cta-flex">
                 <div class="fundraising-cta-text-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75" fill="none">
                     <circle cx="37.5" cy="37.5" r="35.5" stroke-width="4" stroke="#FFD02D"/>

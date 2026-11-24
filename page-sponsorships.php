@@ -68,6 +68,9 @@
     </div>
 
     <section class="sponsorship-cta">
+                <div class="decorative-circles">
+
+        </div>
         <div class="sponsorship-cta-intro">
                 <h2>Considering becoming a sponsor or partner?</h2>
                 <p>We would love to chat about opportunities that would be the best fit for you.</p>

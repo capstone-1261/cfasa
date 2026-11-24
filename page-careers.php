@@ -56,6 +56,9 @@
         </section>
 
         <section class="careers-cta">
+            <div class="decorative-circles">
+
+        </div>
         <div class="careers-cta-intro">
                 <h2>Start a Career That Matters</h2>
                 <p>View a job listing page for more information on how to apply</p>
