@@ -107,8 +107,7 @@ footer div.footer-container{
     gap: var(--wp--preset--spacing--base);
     max-width: 1440px;
     width: 100%;
-    margin: 1rem auto;
-    padding: var(--wp-preset--spacing-small) var(--wp--preset--spacing--large);
+    margin: 0 auto;
     color: var(--wp--preset--color--white);
 }
 
@@ -191,6 +190,30 @@ footer div.footer-social {
 
 div.footer-social img {
     height: 24px;
+}
+
+div.footer-legal {
+    display: flex;
+    gap: var(--wp--preset--spacing--x-large);
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid var(--wp--preset--color--not-quite-white);
+}
+
+div.footer-legal a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--not-quite-white);
+    letter-spacing: 1.4px;
+}
+
+div.footer-legal a:hover {
+    color: var(--wp--preset--color--cyan-cfasa);
+}
+
+div.footer-copyright {
+    width: 100%;
 }
 
 
