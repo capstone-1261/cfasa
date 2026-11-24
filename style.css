@@ -11,9 +11,22 @@ Custom Global Styles (Outside of JSON Capabilities
 =================================================== 
 */
 
+
+
+html {
+    scroll-behavior: smooth;
+}
   
 main {
     padding: var(--wp--preset--spacing--large);
+}
+
+h5 {
+    color: var(--wp--preset--color--white);
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
 }
 
 .tiny-hint {
@@ -93,53 +106,82 @@ footer div.footer-container{
     color: var(--wp--preset--color--white);
 }
 
-footer div.footer-logos {
+footer div.footer-details, div.footer-links, div.footer-logos, div.footer-accreditation{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--wp--preset--spacing--base);
     width: 100%;
 }
 
-footer div.footer-logo svg {
-    width: 120px;
+div.footer-logo {
+    width: 10%;
+    min-width: 100px;
+    max-width: 200px;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-footer div.back-to-top {
-    display: inline-flex;
+
+footer div.back-to-top a {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--wp--preset--spacing--small);
+    flex-wrap: nowrap;
+    width: 162px;
+    text-decoration: none;
+    color: var(--wp--preset--color--white);
 }
 
-
-
-footer div.back-to-top svg {
+footer div.back-to-top a svg {
     width: 44px;
     height: 44px;
 }
 
-
-
-
-
-
-
-footer h5 {
-    color: var(--wp--preset--color--white);
+/* Back to Top button hover style */
+footer div.back-to-top a:hover {
+    color: var(--wp--preset--color--cyan-cfasa);
 }
 
-footer div.footer-details {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: var(--wp--preset--spacing--base);
-    width: 100%;
+footer div.footer-contact h5 {
+    margin: 0;
+}
+
+footer div.footer-details p {
+    margin: 0;
+    padding: 0;
 }
 
 footer div.footer-details > :not(:first-child) {
     border-left: 1px solid var(--wp--preset--color--cyan-cfasa);
     padding: 0 var(--wp--preset--spacing--large);
 }
+
+footer div.footer-accreditation {
+    align-items: center;
+    gap: var(--wp--preset--spacing--small);
+    justify-content: flex-start;
+    max-width: 400px;
+}
+
+footer div.footer-accreditation img {
+    width: 75px;
+    height: 75px;
+}
+
+footer div.footer-social {
+    display: flex;
+    gap: var(--wp--preset--spacing--base);
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
 
 
 

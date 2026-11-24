@@ -8,9 +8,10 @@
             </div>
 
             <!-- Back to top Button -->
-            <div class="back-to-top">
-                <span class="tiny-hint">Back to top</span>
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><rect width="44" height="44" rx="22" fill="#ffd02d"/><path d="M21 30a1 1 0 1 0 2 0zm1-7h-1v7h2v-7zm0-9-5.8 10h11.6z" fill="#0c2542"/></svg>
+            <div class="back-to-top" aria-label="Back to top button">
+                <a href="#top" class="tiny-hint">Back to top
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><rect width="44" height="44" rx="22" fill="#ffd02d" stroke="#ffd02d"/><path d="M21 30a1 1 0 1 0 2 0zm1-7h-1v7h2v-7zm0-9-5.8 10h11.6z" fill="#0c2542"/></svg>
+                </a>
             </div>
         </div>
 
@@ -48,7 +49,17 @@
             </div>
         </div>
 
-        <div class="footer-links"></div>
+        <div class="footer-links">
+            <div class="footer-accreditation">
+                <img width="75" height="75" src="<?php echo get_template_directory_uri(); ?>/img/Logos/carf-logo.png" alt="CARF Accreditation Logo">
+                <p>Accredited in Behavioural Consultation Services - Autism Spectrum Disorder -  Children, Adolescents and Adults</p>
+            </div>
+            
+            <div class="footer-social">
+                
+            </div>
+
+        </div>
         </div>
     </div>
 
