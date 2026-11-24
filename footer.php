@@ -78,9 +78,15 @@
             </div>
 
         </div>
+
+        <div class="footer-legal">
+            <a href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Privacy Policy</a>
+            <a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ); ?>">Terms of Use</a>
+        </div>
+
         <div class="footer-copyright">
             <p>Copyright &copy; <?php echo date("Y"); ?> Centre for Autism Services Alberta. All Rights Reserved.</p>
-            <a href="/privacy" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy link">Privacy Policy</a>
+            <p>Website by Brew and Build</p>
         </div>
     </div>
 

@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <p><strong>Privacy</strong></p>
 <p><strong>WHO ARE WE?</strong></p>
 <p>This Privacy Policy governs Centre for Autism Services Alberta and its subsidiaries. Centre for Autism Services Alberta, “we”, “us” and similar terms as used throughout this Privacy Policy refer to Centre for Autism Services Alberta and its subsidiaries. Centre for Autism Services Alberta may amend this Privacy Policy from time to time. Please visit <a href="https://centreforautism.ab.ca/privacy/">https://centreforautism.ab.ca/privacy/</a> or write to 1-9353 50 Street NW, Edmonton, AB T6B 2L5 Attn: Privacy Officer, for the most up to date version of this Privacy Policy.</p>
