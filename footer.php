@@ -1,5 +1,5 @@
 </main>
-<footer>
+<footer role="contentinfo" class="footer">
     <div class="footer-container">    
         <div class="footer-logos">
             <!-- CFASA Logo with white text -->
@@ -23,6 +23,7 @@
             <div class="footer-contact">
                 <h5>Edmonton Office</h5>
                 <p>#1, 9353 - 50 Street</p>
+                <p>Edmonton, AB T6B 2L5</p>
                 <p>Phone: 780-488-6600</p>
                 <p>Fax: 780-488-6664</p>
                 <p>Email: info@centreforautismab.ca</p>
@@ -34,6 +35,7 @@
                 <p>#200, 2415 Pegasus Road NE</p>
                 <p>Calgary, AB T2E 8C3</p>
                 <p>Phone: 825-210-9284</p>
+                <p>Fax: 780-488-6664</p>
                 <p>Email: info@centreforautismab.ca</p>
             </div>
 
@@ -58,33 +60,39 @@
                 <p class="small-condensed">Accredited in Behavioural Consultation Services - Autism Spectrum Disorder -  Children, Adolescents and Adults</p>
             </div>
             
-            <div class="footer-social">
-                
-                <a href="https://www.instagram.com/AutismCentreAB/" target="_blank" rel="noopener noreferrer" aria-label="Instagram link">
-                    <img height="24" src="<?php echo get_template_directory_uri(); ?>/img/Logos/instagram logo.png" alt="Instagram Logo">
-                </a>
-
-                <a href="https://www.facebook.com/CentreforAutismServicesAlberta/" target="_blank" rel="noopener noreferrer" aria-label="Facebook link">
-                    <img height="24" src="<?php echo get_template_directory_uri(); ?>/img/Logos/facebook logo.png" alt="Facebook Logo">
-                </a>
-                
-                <a href="https://www.linkedin.com/company/centre-for-autism-services-alberta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn link">
-                    <img height="24" src="<?php echo get_template_directory_uri(); ?>/img/Logos/LinkedIn logo.png" alt="LinkedIn Logo">
-                </a>
-                
-                <a href="https://www.youtube.com/channel/UC9deQI9Asc5o46ho6ihGiJA" target="_blank" rel="noopener noreferrer" aria-label="YouTube link">
-                    <img height="24" src="<?php echo get_template_directory_uri(); ?>/img/Logos/YouTube logo.png" alt="YouTube Logo">
-                </a>
-            </div>
+            <nav class="footer-social" aria-label="Social media">
+                <ul>
+                    <li>
+                    <a href="https://www.instagram.com/AutismCentreAB/" target="_blank" rel="noopener noreferrer" aria-label="Centre for Autism Services Alberta on Instagram (opens in a new tab)">
+                        <img height="24" width="24" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/Logos/instagram logo.png" alt="Instagram logo">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="https://www.facebook.com/CentreforAutismServicesAlberta/" target="_blank" rel="noopener noreferrer" aria-label="Centre for Autism Services Alberta on Facebook (opens in a new tab)">
+                        <img height="24" width="24" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/Logos/facebook logo.png" alt="Facebook logo">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="https://www.linkedin.com/company/centre-for-autism-services-alberta/" target="_blank" rel="noopener noreferrer" aria-label="Centre for Autism Services Alberta on LinkedIn (opens in a new tab)">
+                        <img height="24" width="99" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/Logos/LinkedIn logo.png" alt="LinkedIn logo">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="https://www.youtube.com/channel/UC9deQI9Asc5o46ho6ihGiJA" target="_blank" rel="noopener noreferrer" aria-label="Centre for Autism Services Alberta on YouTube (opens in a new tab)">
+                        <img height="24" width="108" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/Logos/YouTube logo.png" alt="YouTube logo">
+                    </a>
+                    </li>
+                </ul>
+            </nav>
 
         </div>
     </div>
 
-    <div class="footer-legal">
-            <a href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Privacy Policy</a>
-            <a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ); ?>">Terms of Use</a>
-            <a href="<?php echo get_permalink( get_page_by_path( 'refund-policy' ) ); ?>">Refund Policy</a>
-        </div>
+    <nav class="footer-legal" aria-label="Footer legal links">
+            <a aria-label="Privacy Policy" href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Privacy Policy</a>
+            <a aria-label="Terms of Use" href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ); ?>">Terms of Use</a>
+            <a aria-label="Refund Policy" href="<?php echo get_permalink( get_page_by_path( 'refund-policy' ) ); ?>">Refund Policy</a>
+    </nav>
 
         <div class="footer-copyright">
             <p>Copyright &copy; <?php echo date("Y"); ?> Centre for Autism Services Alberta. All Rights Reserved. <span>Website by Brew and Build </span></p>
