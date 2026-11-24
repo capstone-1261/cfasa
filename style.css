@@ -98,16 +98,79 @@ Drop Shadow Styles
 Header + Navigation Styles
 ========================== 
 */
-.header-inner {
+header {
+    background-color: var(--wp--preset--color--navy-blue-cfasa);
+}
+.header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.header-inner nav ul {
+.nav-menu,
+.nav-menu .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile closed by default */
+.nav-menu {
+  display: none;
+}
+.main-navigation.is-mobile-open .nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Submenus closed by default */
+.nav-menu .sub-menu {
+  display: none;
+  padding-left: 16px;
+}
+.nav-menu li.is-open > .sub-menu {
+  display: block;
+}
+
+.submenu-toggle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* Clear keyboard focus ring */
+.main-navigation :is(a, button):focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav-menu {
     display: flex;
-    gap: var(--wp--preset--spacing--base);
+    gap: 20px;
+  }
+  .nav-menu > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .nav-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding-left: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+  }
 }
 
 /* 

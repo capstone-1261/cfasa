@@ -108,3 +108,16 @@ function cfasa_get_involved_styles() {
 add_action('wp_enqueue_scripts', 'cfasa_get_involved_styles');
 
 /* End of Get Involved CSS */
+
+
+// Enque the JavaScript file for navigation functionality
+function theme_enqueue_scripts() {
+  wp_enqueue_script(
+    'theme-navigation',
+    get_template_directory_uri() . '/js/navigation.js',
+    array(),
+    '1.0',
+    true
+  );
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
