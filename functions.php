@@ -78,6 +78,7 @@ function cfasa_programs_services_styles() {
 
 add_action('wp_enqueue_scripts', 'cfasa_programs_services_styles');
 
+
 /* End of Programs & Services CSS  */
 
 /* Get Involved CSS */
@@ -90,7 +91,8 @@ function cfasa_get_involved_styles() {
         'fundraisers',
         'sponsorships',
         'donate',
-        'careers'
+        'careers',
+        'council'
     ) ) ) {
 
         wp_enqueue_style(

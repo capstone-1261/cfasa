@@ -3,134 +3,568 @@
 get_header();
 get_template_part('parts/hero-banner-minimal');
 ?>
-<main id="main-content" class="ps-main">
-    <section class="ps-top" aria-label="Programs and services navigation">
-        <div class="ps-wrap">
-            <h2>Programs &amp; Services</h2>
-            <div class="ps-jump-heading">JUMP TO PAGE</div>
-            <nav class="ps-jump" aria-label="Programs and Services pages">
-                <a href="<?php echo esc_url( home_url('/early-childhood-services/') ); ?>" >Early Childhood Services</a>
-                <a href="<?php echo esc_url( home_url('/professional-services/') ); ?>" >Professional Services</a>
-                <a href="<?php echo esc_url( home_url('/diagnostic-services/') ); ?>" >Diagnostic Services</a>
-                <a class="ps-current" href="<?php echo esc_url( home_url('/community-social-recreation-programs/') ); ?>" aria-current="page">Social Programs</a>
-                <a href="<?php echo esc_url( home_url('/independent-living-skills-employment/') ); ?>" >Living Skills & Employment</a>
-                <a href="<?php echo esc_url( home_url('/inclusive-post-secondary-education-services/') ); ?>" >IPSE</a>
-                <a href="<?php echo esc_url( home_url('/summer-programming/') ); ?>" >Summer Programs</a>
-                <a href="<?php echo esc_url( home_url('/rent-our-kitchen-space/') ); ?>" >Kitchen Rental</a>
-            </nav>
-        </div>
-    </section>
-    <div class="ps-surface">
-        <div class="ps-wrap">
-            <nav class="ps-breadcrumb" aria-label="Breadcrumb">
-                <a href="<?php echo esc_url( home_url('/') ); ?>">Home</a><span aria-hidden="true">›</span>
-                <a href="<?php echo esc_url( home_url('/programs-services/') ); ?>">Programs &amp; Services</a><span aria-hidden="true">›</span>
-                <span>Community, Social &amp; Recreation Programs</span>
-            </nav>
-            <section class="ps-hero">
-                <div>
-                    <h1>Community, Social &amp; Recreation Programs</h1>
-                    <p class="ps-lead">Explore programs for children, teens, and young adults.</p>
-                </div>
-                <?php
-                $ps_hero = get_the_post_thumbnail_url( get_queried_object_id(), 'large' );
-                if ( ! $ps_hero ) {
-                    $ps_hero = get_theme_file_uri( '/assets/images/community.jpg');
-                }
-                ?>
-                <img src="<?php echo esc_url( $ps_hero ); ?>" alt="Community, Social &amp; Recreation Programs" fetchpriority="high">
-            </section>
 
-            <section class="ps-intro"><p>CFASA offers a variety of programs for children, teens, and young adults including art, cooking, social programs, sports, and athletics.</p></section>
-            <nav class="ps-anchor-tabs" aria-label="Community program categories"><a href="#ps-children">Children Programs</a><a href="#ps-teens">Tween &amp; Teen Programs</a><a href="#ps-adults">Youth &amp; Adult Programs</a></nav>
-            <?php
-         
-            $ps_groups = array(
-                'children' => array(
-                    'heading' => 'Children Programs',
-                    'items' => array(
-                        array('Fun With Art', 'ages 6 to 12'), array('Basketballers', 'ages 6 to 12'),
-                        array('Kickstart Soccer', 'ages 6 to 12'), array('Multisport', 'ages 6 to 12'),
-                        array('Mini Multisport', 'ages 3 to 5'), array('Skating', 'ages 4 to 13'),
-                    ),
-                ),
-                'teens' => array(
-                    'heading' => 'Tween & Teen Programs',
-                    'items' => array(
-                        array('Youth Basketball', 'ages 12 to 17'), array('Spotlight drama program', 'ages 8 to 17'),
-                        array('Skating', 'ages 4 to 13'), array('Tween Social Night', 'ages 9 to 12'),
-                        array('Just 4 Teens', 'ages 13 to 17'), array('Teen Social Night', 'ages 13 to 17'),
-                        array('Exploring Art', 'ages 13 to 17'), array('Shop, Cook & Learn', 'ages 13 to 17'),
-                    ),
-                ),
-                'adults' => array(
-                    'heading' => 'Youth & Adult Programs',
-                    'items' => array(
-                        array('Young Adult Social Night', 'ages 18 to 19'),
-                        array('Active for Life', 'ages 16 to 29'),
-                        array('Creative Expression', 'ages 18 to 29'),
-                    ),
-                ),
-            );
-            $ps_program_posts = get_posts(array(
-                'post_type' => 'program', 'post_status' => 'publish',
-                'numberposts' => -1,
-                'orderby' => 'title', 'order' => 'ASC',
-            ));
-            foreach ($ps_groups as $ps_group_key => $ps_group) :
-            ?>
-                <section class="ps-section" id="ps-<?php echo esc_attr($ps_group_key); ?>">
-                    <h2><?php echo esc_html($ps_group['heading']); ?></h2>
-                    <div class="ps-grid ps-grid--3 ps-program-grid">
-                        <?php
-                        $ps_group_has_posts = false;
-                        foreach ($ps_program_posts as $ps_program) :
-                            $ps_name = get_the_title($ps_program->ID);
-                            $ps_acf_group = function_exists('get_field') ? get_field('program_type', $ps_program->ID) : '';
-                            // Accept 'children', 'teens', 'adults' when your team updates ACF choices.
-                            $ps_group_match = is_string($ps_acf_group) && strtolower(trim($ps_acf_group)) === $ps_group_key;
-                            // Also accept a matching title before ACF categories are configured.
-                            foreach ($ps_group['items'] as $ps_sample) {
-                                if (strcasecmp($ps_name, $ps_sample[0]) === 0) { $ps_group_match = true; break; }
-                            }
-                            if (!$ps_group_match) { continue; }
-                            $ps_group_has_posts = true;
-                            $ps_age = function_exists('get_field') ? get_field('age_range', $ps_program->ID) : '';
-                            $ps_image = function_exists('get_field') ? get_field('program_image', $ps_program->ID) : false;
-                            $ps_image_url = '';
-                            if (is_array($ps_image)) { $ps_image_url = $ps_image['url'] ?? ''; }
-                            elseif (is_numeric($ps_image)) { $ps_image_url = wp_get_attachment_image_url((int)$ps_image, 'medium_large'); }
-                            elseif (is_string($ps_image)) { $ps_image_url = $ps_image; }
-                            if (!$ps_image_url) { $ps_image_url = get_the_post_thumbnail_url($ps_program->ID, 'medium_large'); }
-                        ?>
-                            <a class="ps-program-card" href="<?php echo esc_url(get_permalink($ps_program->ID)); ?>" <?php if ($ps_image_url) : ?>style="--program-image:url('<?php echo esc_url($ps_image_url); ?>')"<?php endif; ?>>
-                                <strong><?php echo esc_html($ps_name); ?></strong>
-                                <?php if ($ps_age) : ?><span><?php echo esc_html($ps_age); ?></span><?php endif; ?>
-                                <span class="ps-program-details">Program details <span aria-hidden="true">→</span></span>
-                            </a>
-                        <?php endforeach; ?>
-                        <?php if (!$ps_group_has_posts) : ?>
-                            <?php foreach ($ps_group['items'] as $ps_sample) : ?>
-                                <article class="ps-program-card ps-program-card--sample">
-                                    <strong><?php echo esc_html($ps_sample[0]); ?></strong>
-                                    <span><?php echo esc_html($ps_sample[1]); ?></span>
-                                    <span class="ps-program-details">Program details coming soon</span>
-                                </article>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </div>
-                </section>
-            <?php endforeach; ?>
-        </div><!-- .ps-wrap -->
-    </div><!-- .ps-surface -->
-    <aside class="ps-promo" aria-label="Current program promotion">
-        <div class="ps-wrap">
-            <h2>FALL PROGRAMS NOW OPEN!</h2>
-            <p>Meet new friends and try<br> something new this fall!</p>
-            <a class="ps-btn ps-btn--dark" href="<?php echo esc_url( home_url('/community-social-recreation-programs/') ); ?>">Explore programs <span aria-hidden="true">→</span></a>
-        </div>
-    </aside>
+<main class="cfasa-ps" data-page="community-social-recreation-programs" id="cfasa-ps">
+ <span id="ps-top">
+ </span>
+ <nav aria-label="Programs and Services section navigation" class="ps-jump">
+  <div class="ps-shell">
+   <div class="ps-jump-top">
+    <a class="ps-jump-brand" href="<?php echo esc_url( home_url( '/programs-services/' ) ); ?>">
+     Programs &amp; Services
+    </a>
+    <span class="ps-jump-caption">
+     Jump to page
+    </span>
+   </div>
+   <div class="ps-jump-links">
+    <a href="<?php echo esc_url( home_url( '/programs-services/early-childhood-services/' ) ); ?>" title="Early Childhood Services (Edmonton and Calgary)">
+     Early Childhood
+    </a>
+    <a href="<?php echo esc_url( home_url( '/programs-services/professional-services/' ) ); ?>" title="Professional Services">
+     Professional
+    </a>
+    <a href="<?php echo esc_url( home_url( '/programs-services/diagnostic-services/' ) ); ?>" title="Diagnostic Services">
+     Diagnostic
+    </a>
+    <a aria-current="page" class="is-active" href="<?php echo esc_url( home_url( '/programs-services/community-social-recreation-programs/' ) ); ?>" title="Community, Social, &amp; Recreation Programs">
+     Social Programs
+    </a>
+    <a href="<?php echo esc_url( home_url( '/programs-services/independent-living-skills-employment/' ) ); ?>" title="Independent Living Skills &amp; Employment">
+     Living Skills
+    </a>
+    <a href="<?php echo esc_url( home_url( '/programs-services/inclusive-post-secondary-education-services/' ) ); ?>" title="Inclusive Post-Secondary Education Services (IPSE)">
+     IPSE
+    </a>
+    <a href="<?php echo esc_url( home_url( '/programs-services/summer-programming/' ) ); ?>" title="Summer Programming">
+     Summer Programs
+    </a>
+    <a href="<?php echo esc_url( home_url( '/programs-services/rent-our-kitchen-space/' ) ); ?>" title="Rent Our Kitchen Space!">
+     Kitchen Rental
+    </a>
+   </div>
+  </div>
+ </nav>
+ <header class="ps-hero" style="--ps-hero-image:url(<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Creative-Expressions-4-480x220.jpg)">
+  <div class="ps-shell ps-hero-inner">
+   <div class="ps-breadcrumb">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+     Home
+    </a>
+    <span aria-hidden="true">
+     ›
+    </span>
+    <a href="<?php echo esc_url( home_url( '/programs-services/' ) ); ?>">
+     Programs &amp; Services
+    </a>
+    <span aria-hidden="true">
+     ›
+    </span>
+    <span>
+     Community, Social &amp; Recreation Programs
+    </span>
+   </div>
+   <div class="ps-hero-copy">
+    <h1>
+     Community, Social &amp; Recreation Programs
+    </h1>
+    <p>
+     Art, cooking, social programs, sports, and more!
+    </p>
+   </div>
+  </div>
+ </header>
+ <section class="ps-section ps-shell">
+  <div class="ps-prose ps-narrow">
+   <h2>
+    About
+   </h2>
+   <p>
+    CFASA offers a variety of art, cooking, social, sport, and recreation programs for children, teens, and adults. These programs offer opportunities to develop skills, build connections, and have fun.
+   </p>
+   <p>
+    <strong>
+     All teen and adult social programs require pre-screening before registration.
+    </strong>
+   </p>
+  </div>
+  <nav aria-label="Program age categories" class="ps-anchor-tabs">
+   <a href="#children">
+    Children Programs
+   </a>
+   <a href="#teens">
+    Tween &amp; Teen Programs
+   </a>
+   <a href="#adults">
+    Youth &amp; Adult Programs
+   </a>
+  </nav>
+  <div class="ps-section-heading" id="children">
+   <span>
+    Children Programs
+   </span>
+  </div>
+  <div class="ps-program-grid">
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/fun-with-art-pexels-alexander-grey-1153895-1920x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 6–12
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Fun With Art
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Fun%20With%20Art">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/basketballers-kylie-osullivan-BfaBLVCBTI8-unsplash-1920x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 6–12
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Basketballers
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Basketballers">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Kickstart-Soccer_Header.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 6–12
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Kickstart Soccer
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Kickstart%20Soccer">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/community-programs-multisport.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 6–12
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Multisport
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Multisport">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/community-programs-multisport.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 3–5
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Mini Multisport
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Mini%20Multisport">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/skating-1800x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 4–13
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Skating
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Skating">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+  </div>
+  <div class="ps-section-heading" id="teens">
+   <span>
+    Tween &amp; Teen Programs
+   </span>
+  </div>
+  <div class="ps-program-grid">
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/youth-basketball-jason-leung-nM2WEy42Npg-unsplash-scaled-e1659721249184-1920x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 12–17
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Youth Basketball
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Youth%20Basketball">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Visual%20Arts%20for%20children%2C%20teens%2C%20and%20young%20adults.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 8–11 and 12–17
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Spotlight Drama Program
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Spotlight%20Drama%20Program">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/skating-1800x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 4–13
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Skating
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Skating">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Teen-Social.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 9–12
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Tween Social Night
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Tween%20Social%20Night">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/just-4-teens-iStock-501861979-1920x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 13–17
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Just 4 Teens
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Just%204%20Teens">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Teen-Social.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 13–17
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Teen Social Night
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Teen%20Social%20Night">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Exploring-Art-pexels-miguel-a-padrinan-19680-1920x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 13–17
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Exploring Art
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Exploring%20Art">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Shop-Cook-and-Learn.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 13–17
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Shop, Cook &amp; Learn
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Shop%2C%20Cook%20%26%20Learn">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+  </div>
+  <div class="ps-section-heading" id="adults">
+   <span>
+    Youth &amp; Adult Programs
+   </span>
+  </div>
+  <div class="ps-program-grid">
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Young-Adult-Social-Night-YASN-1920x800.png')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 18–19
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Young Adult Social Night
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Young%20Adult%20Social%20Night">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Creative-Expressions-4-480x220.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 16–29
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Creative Expression
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Creative%20Expression">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+   <article class="ps-program-card">
+    <div class="ps-program-photo" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/Active-for-life-DSC_0286-Enhanced-NR-1920x800.jpg')">
+    </div>
+    <div class="ps-program-card-body">
+     <div class="ps-program-meta">
+      <span>
+       Ages 16–29
+      </span>
+      <span>
+       Edmonton
+      </span>
+     </div>
+     <h3>
+      Active For Life
+     </h3>
+     <a href="mailto:info@centreforautismab.ca?subject=Program%20enquiry%3A%20Active%20For%20Life">
+      Ask About Program
+      <span aria-hidden="true">
+       →
+      </span>
+     </a>
+    </div>
+   </article>
+  </div>
+ </section>
+ <section aria-label="How to contact CFASA" class="ps-contact" id="ps-contact">
+  <div>
+   <h2>
+    Questions about social programs?
+   </h2>
+   <p>
+    For program details, screening, and registration information, contact CFASA.
+   </p>
+  </div>
+  <div class="ps-contact-items">
+   <div class="ps-contact-item">
+    <span>
+     Email
+    </span>
+    <a href="mailto:info@centreforautismab.ca">
+     info@centreforautismab.ca
+    </a>
+   </div>
+   <div class="ps-contact-item">
+    <span>
+     Phone
+    </span>
+    <a href="tel:+17804886600">
+     780-488-6600
+    </a>
+   </div>
+  </div>
+ </section>
+ <section class="ps-promo">
+  <div class="ps-shell">
+   <div>
+    <h2>
+     Discover What’s Possible
+    </h2>
+    <p>
+     Meet new friends, build skills, and explore something new.
+    </p>
+    <a class="ps-button-light" href="<?php echo esc_url( home_url( '/programs-services/' ) ); ?>">
+     Explore Programs
+    </a>
+   </div>
+  </div>
+ </section>
+ <div class="ps-back ps-shell">
+  <a href="#ps-top">
+   Back to top
+   <span aria-hidden="true">
+    ↑
+   </span>
+  </a>
+ </div>
+
+
 <?php
-
+// The active theme's footer.php closes the <main> element.
 get_footer();
-?>
