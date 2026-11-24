@@ -78,20 +78,18 @@
             </div>
 
         </div>
+    </div>
 
-        <div class="footer-legal">
+    <div class="footer-legal">
             <a href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Privacy Policy</a>
             <a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ); ?>">Terms of Use</a>
             <a href="<?php echo get_permalink( get_page_by_path( 'refund-policy' ) ); ?>">Refund Policy</a>
         </div>
 
         <div class="footer-copyright">
-            <p>Copyright &copy; <?php echo date("Y"); ?> Centre for Autism Services Alberta. All Rights Reserved. <span>Website by Brew and Build</span></p>
+            <p>Copyright &copy; <?php echo date("Y"); ?> Centre for Autism Services Alberta. All Rights Reserved. <span>Website by Brew and Build </span></p>
             
         </div>
-    </div>
-
-
     
 
 
