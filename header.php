@@ -38,5 +38,14 @@
             ?>
         </nav>
 
+        <div class="menu-toggle" id="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+            <span class="menu-icon">
+                <svg width="29" height="13" viewBox="0 0 29 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.5 0.5H28.5M0.5 6.21429H28.5M0.5 11.9286H28.5" stroke-linecap="square" stroke-linejoin="round" stroke="white"/>
+                </svg>
+            </span>
+            <span class="menu-text">Menu</span>
+        </div>
+
     </div>
 </header>

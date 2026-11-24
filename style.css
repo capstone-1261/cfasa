@@ -100,6 +100,12 @@ Header + Navigation Styles
 */
 header {
     background-color: var(--wp--preset--color--navy-blue-cfasa);
+    color: var(--wp--preset--color--white);
+}
+
+header a {
+    color: var(--wp--preset--color--white);
+    text-decoration: none;
 }
 .header-container {
     display: flex;
@@ -108,68 +114,160 @@ header {
     justify-content: space-between;
 }
 
-.nav-menu,
-.nav-menu .sub-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Base & Reset */
+.main-navigation {
+  position: relative;
 }
 
-/* Mobile closed by default */
+/* Mobile Hamburger Button */
+.menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menu-toggle span.menu-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 18%;
+    text-transform: uppercase;
+}
+
+/* Mobile Menu Drawer (Closed by default) */
 .nav-menu {
   display: none;
 }
+
 .main-navigation.is-mobile-open .nav-menu {
   display: flex;
   flex-direction: column;
 }
 
-/* Submenus closed by default */
+/* Mobile Menu Row Layout (Link + Toggle Button side-by-side) */
+.nav-menu li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-menu a {
+    flex: 1;
+    display: block;
+    text-wrap: nowrap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 80%;
+}
+
+
+/* Submenu Toggle Button */
+.submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px; /* Accessible touch target */
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.submenu-toggle span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: var(--wp--preset--color--cyan-cfasa);
+  font-size: 1.6rem;
+}
+
+.submenu-toggle[aria-expanded="true"] span {
+  transform: rotate(90deg);
+  color: var(--wp--preset--color--yellow-cfasa)
+}
+
+/* Mobile Nested Submenu Accordion */
 .nav-menu .sub-menu {
   display: none;
-  padding-left: 16px;
+  width: 100%;
+  border-top: 1px solid var(--wp--preset--color--light-gray);
+  background-color: var(--wp--preset--color--navy-blue-cfasa);
 }
+
 .nav-menu li.is-open > .sub-menu {
   display: block;
 }
 
-.submenu-toggle {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  padding: 4px 8px;
+.nav-menu .sub-menu a {
+  padding: 12px 16px 12px 32px; /* Indented on mobile */
+  font-size: 0.95rem;
 }
 
-/* Clear keyboard focus ring */
+/* High-Contrast Keyboard Focus */
 .main-navigation :is(a, button):focus-visible {
-  outline: 2px solid #005fcc;
-  outline-offset: 2px;
+  outline: 2px solid var(--wp--preset--color--cyan-cfasa-dark);
+  outline-offset: -2px; /* Inset so mobile borders don't clip the ring */
   border-radius: 4px;
 }
 
-/* Desktop layout */
+/* =========================================
+   Desktop Breakpoint (900px and up)
+   ========================================= */
 @media (min-width: 900px) {
   .menu-toggle {
     display: none;
   }
+
   .nav-menu {
     display: flex;
-    gap: 20px;
-  }
-  .nav-menu > li {
-    position: relative;
-    display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: 24px;
+    border-top: 0;
+    background: transparent;
   }
+
+
+
+
+
+  .submenu-toggle {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  /* Floating Desktop Dropdown */
   .nav-menu .sub-menu {
     position: absolute;
-    top: 100%;
+    top: 2rem;
     left: 0;
-    min-width: 200px;
-    padding-left: 0;
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    background: var(--wp--preset--color--navy-blue-cfasa);
+    border-radius: 6px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     z-index: 100;
+  }
+
+  .nav-menu .sub-menu li:last-child {
+    border-bottom: 0;
+  }
+
+  .nav-menu .sub-menu a {
+    padding: 12px 16px;
+  }
+
+  .main-navigation :is(a, button):focus-visible {
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submenu-toggle span {
+    transition: none;
   }
 }
 

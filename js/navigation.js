@@ -1,5 +1,3 @@
-// This script finds every .menu-item-has-children item WordPress generates, inserts a <button> right after the <a> tag, and handles clicks, desktop hover, and the Escape key:
-
 document.addEventListener("DOMContentLoaded", () => {
 	const nav = document.querySelector(".main-navigation");
 	if (!nav) return;
@@ -45,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		link.after(btn);
 
-		// Click to toggle
+		// Click or Enter/Space to toggle
 		btn.addEventListener("click", () => {
 			const isOpen = btn.getAttribute("aria-expanded") === "true";
 			closeAll(li);
@@ -64,6 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		li.addEventListener("mouseleave", () => {
 			if (window.innerWidth >= 900) {
+				btn.setAttribute("aria-expanded", "false");
+				li.classList.remove("is-open");
+			}
+		});
+
+		// Close automatically when user Tabs out of this dropdown item
+		li.addEventListener("focusout", (e) => {
+			if (!li.contains(e.relatedTarget)) {
 				btn.setAttribute("aria-expanded", "false");
 				li.classList.remove("is-open");
 			}
@@ -88,5 +94,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	document.addEventListener("click", (e) => {
 		if (!nav.contains(e.target)) closeAll();
+	});
+
+	// Reset mobile menu if window resizes to desktop width
+	window.addEventListener("resize", () => {
+		if (window.innerWidth >= 900 && nav.classList.contains("is-mobile-open")) {
+			nav.classList.remove("is-mobile-open");
+			if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+			closeAll();
+		}
+	});
+
+	// Close mobile menu when user Tabs completely out of the navigation
+	nav.addEventListener("focusout", (e) => {
+		if (window.innerWidth < 900 && !nav.contains(e.relatedTarget)) {
+			nav.classList.remove("is-mobile-open");
+			if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+			closeAll();
+		}
 	});
 });
