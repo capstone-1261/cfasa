@@ -42,6 +42,12 @@ h5 {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.small-condensed{
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    line-height: 19px;
+  }
 
 /* 
 ==========================
@@ -101,7 +107,7 @@ footer div.footer-container{
     gap: var(--wp--preset--spacing--base);
     max-width: 1440px;
     width: 100%;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: var(--wp-preset--spacing-small) var(--wp--preset--spacing--large);
     color: var(--wp--preset--color--white);
 }
@@ -114,7 +120,7 @@ footer div.footer-details, div.footer-links, div.footer-logos, div.footer-accred
     width: 100%;
 }
 
-div.footer-logo {
+div.footer-logo svg {
     width: 10%;
     min-width: 100px;
     max-width: 200px;
@@ -144,11 +150,16 @@ footer div.back-to-top a:hover {
     color: var(--wp--preset--color--cyan-cfasa);
 }
 
-footer div.footer-contact h5 {
-    margin: 0;
+footer div.footer-contact {
+    height: 100%;
 }
 
-footer div.footer-details p {
+footer div.footer-contact h5 {
+    margin-top: 0;
+    margin-bottom: var(--wp--preset--spacing--small);
+}
+
+footer div.footer-details p, div.footer-accreditation p {
     margin: 0;
     padding: 0;
 }
@@ -176,6 +187,10 @@ footer div.footer-social {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+}
+
+div.footer-social img {
+    height: 24px;
 }
 
 
