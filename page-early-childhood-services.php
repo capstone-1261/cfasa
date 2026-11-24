@@ -1,7 +1,7 @@
 <?php
-
 get_header();
-<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
+get_template_part('parts/hero-banner-minimal');
+?>
 
 
 <main class="cfasa-ps" data-page="early-childhood-services" id="cfasa-ps">
@@ -45,35 +45,7 @@ get_header();
    </div>
   </div>
  </nav>
- <header class="ps-hero" style="--ps-hero-image:url(<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/iStock-671260408-e1619208651567-1841x800.jpg)">
-  <div class="ps-shell ps-hero-inner">
-   <div class="ps-breadcrumb">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-     Home
-    </a>
-    <span aria-hidden="true">
-     ›
-    </span>
-    <a href="<?php echo esc_url( home_url( '/programs-services/' ) ); ?>">
-     Programs &amp; Services
-    </a>
-    <span aria-hidden="true">
-     ›
-    </span>
-    <span>
-     Early Childhood Services
-    </span>
-   </div>
-   <div class="ps-hero-copy">
-    <h1>
-     Early Childhood Services
-    </h1>
-    <p>
-     Specialized Pre-K and Kindergarten Programming
-    </p>
-   </div>
-  </div>
- </header>
+
  <section class="ps-section ps-shell">
   <div class="ps-prose ps-narrow">
    <h2>
