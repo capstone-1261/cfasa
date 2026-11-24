@@ -184,12 +184,12 @@
 				{
 					"name": "H4",
 					"slug": "h4",
-					"size": "0.875"
+					"size": "0.875rem"
 				},
 				{
 					"name": "H5",
 					"slug": "h5",
-					"size": "0.938"
+					"size": "0.938rem"
 				}
 			],
 			"fontFamilies": [

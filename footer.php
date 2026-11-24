@@ -9,7 +9,7 @@
 
             <!-- Back to top Button -->
             <div class="back-to-top">
-                <span class="">Back to top</span>
+                <span class="tiny-hint">Back to top</span>
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><rect width="44" height="44" rx="22" fill="#ffd02d"/><path d="M21 30a1 1 0 1 0 2 0zm1-7h-1v7h2v-7zm0-9-5.8 10h11.6z" fill="#0c2542"/></svg>
             </div>
         </div>

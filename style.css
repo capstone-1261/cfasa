@@ -16,6 +16,20 @@ main {
     padding: var(--wp--preset--spacing--large);
 }
 
+.tiny-hint {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    /* font smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
 /* 
 ==========================
 Header + Navigation Styles
@@ -62,7 +76,8 @@ Footer Styles
 */
 
 footer {
-    background-color: var(--wp--preset--color--primary);
+    background-color: var(--wp--preset--color--navy-blue-cfasa);
+    padding-top: var(--wp--preset--spacing--large);
 }
 
 footer div.footer-container{
@@ -72,6 +87,7 @@ footer div.footer-container{
     align-items: center;
     gap: var(--wp--preset--spacing--base);
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     padding: var(--wp-preset--spacing-small) var(--wp--preset--spacing--large);
     color: var(--wp--preset--color--white);
@@ -86,20 +102,22 @@ footer div.footer-logos {
 
 footer div.footer-logo svg {
     width: 120px;
-
 }
 
 footer div.back-to-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    height: 44px;
-    gap: 10px;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    text-transform: uppercase;
-
+    gap: var(--wp--preset--spacing--small);
 }
+
+
+
+footer div.back-to-top svg {
+    width: 44px;
+    height: 44px;
+}
+
 
 
 
@@ -113,9 +131,9 @@ footer h5 {
 footer div.footer-details {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: top;
+    justify-content: flex-start;
     gap: var(--wp--preset--spacing--base);
+    width: 100%;
 }
 
 footer div.footer-details > :not(:first-child) {
