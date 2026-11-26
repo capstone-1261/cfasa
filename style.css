@@ -101,6 +101,9 @@ Header + Navigation Styles
 header {
     background-color: var(--wp--preset--color--navy-blue-cfasa);
     color: var(--wp--preset--color--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header a {
@@ -112,19 +115,27 @@ header a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
-/* Base & Reset */
-.main-navigation {
-  position: relative;
+header .header-logo {
+  padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--base);
 }
+
+header nav.main-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2%;
+}
+
 
 /* Mobile Hamburger Button */
 .menu-toggle {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  padding: 8px;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
@@ -137,9 +148,11 @@ header a {
     text-transform: uppercase;
 }
 
-/* Mobile Menu Drawer (Closed by default) */
+
 .nav-menu {
   display: none;
+  padding: 0;
+  margin: 0;
 }
 
 .main-navigation.is-mobile-open .nav-menu {
@@ -150,7 +163,7 @@ header a {
 /* Mobile Menu Row Layout (Link + Toggle Button side-by-side) */
 .nav-menu li {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -162,7 +175,6 @@ header a {
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 80%;
 }
 
 
@@ -207,6 +219,7 @@ header a {
   font-size: 0.95rem;
 }
 
+
 /* High-Contrast Keyboard Focus */
 .main-navigation :is(a, button):focus-visible {
   outline: 2px solid var(--wp--preset--color--cyan-cfasa-dark);
@@ -217,7 +230,8 @@ header a {
 /* =========================================
    Desktop Breakpoint (900px and up)
    ========================================= */
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
+
   .menu-toggle {
     display: none;
   }
@@ -226,14 +240,13 @@ header a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 24px;
-    border-top: 0;
-    background: transparent;
+    gap: 1.5rem;
+    height: 36px;
   }
 
-
-
-
+  .nav-menu .menu-item {
+    height: 100%;
+  }
 
   .submenu-toggle {
     min-width: 32px;
@@ -243,21 +256,16 @@ header a {
   /* Floating Desktop Dropdown */
   .nav-menu .sub-menu {
     position: absolute;
-    top: 2rem;
-    left: 0;
-    min-width: 220px;
+    top: 100%;
+    min-width: fit-content;
+    max-width: max-content;
     background: var(--wp--preset--color--navy-blue-cfasa);
-    border-radius: 6px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius:0 0 20px 20px;
     z-index: 100;
   }
 
-  .nav-menu .sub-menu li:last-child {
-    border-bottom: 0;
-  }
-
-  .nav-menu .sub-menu a {
-    padding: 12px 16px;
+  .nav-menu .sub-menu {
+    padding: var(--wp--preset--spacing--small) 0;
   }
 
   .main-navigation :is(a, button):focus-visible {
