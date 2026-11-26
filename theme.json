@@ -266,7 +266,7 @@
 				},
 				":hover": {
 					"color": {
-						"text": "#CF0000"
+						"text": "var(--wp--preset--color--cyan-cfasa)"
 					}
 				}
 			},
