@@ -1,7 +1,7 @@
 <?php get_header(); ?>
+<? get_template_part('parts/hero-banner-minimal'); ?>
 
 <main>
-    <h1><?php the_title(); ?></h1>
 
 <section class="involved-nav-container">
     <div>
@@ -24,9 +24,9 @@
 <section class="donation-container">
         <section class="donation-intro">
             <div class="donation-head-text">
-                <h2>SPONSORSHIPS & PARTNERSHIPS</h2>
-                <p>Commited and Conected to Your Community</p>
-                <p>Become a Sponsor or Partner!</p>
+                <h2>Donate</h2>
+                <p class="blue-highlight">Our work is made possible by the generosity of our donors, sponsors, and partners.</p>
+                <p>Make a general donation or contribute to a fundraising campaign or event in support of the Centre for Autism Services Alberta programs or services.</p>
             </div>
             <div class="donation-head-image">
                 /* image goes here */
@@ -115,4 +115,4 @@
 
 </section>
 
-</main>
+<?php get_footer(); ?>
