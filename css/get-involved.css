@@ -78,26 +78,27 @@ main {
     margin: 0;
 }
 
-.donation-head-image img, .careers-head-image img {
+.donation-head-image img, .careers-head-image img,
+.sponsorship-head-image img {
     flex: 1 0 0;
     align-self: stretch;
     border-radius: 24px;
 }
 
-.donation-head-image {
+.donation-head-image, .sponsorship-head-image {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.donation-head-image img {
+.donation-head-image img, .sponsorship-head-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.donation-head-image {
+.donation-head-image, .sponsorship-head-image {
     min-width: 400px;
 }
 
@@ -507,13 +508,6 @@ main {
 
 .sponsorship-head-text p {
     margin: 0;
-}
-
-.sponsorship-head-image img {
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 24px;
-    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 .sponsorship-title {
@@ -1805,7 +1799,7 @@ Queries
     }
 
     .get-involved-card-body button {
-        x max-width: 250px;
+        max-width: 250px;
     }
 
     /* Donation page queries */
@@ -1827,11 +1821,11 @@ Queries
         letter-spacing: 2px;
     }
 
-    .donation-head-image {
+    .donation-head-image, .sponsorship-head-image {
         width: 100%;
     }
 
-    .donation-head-image img {
+    .donation-head-image img, .sponsorship-head-image img {
         width: 100%;
         height: auto;
         max-height: 300px;
@@ -2419,7 +2413,7 @@ Queries
 
 
     /* IMAGE QUERIES */
-    .donation-head-image {
+    .donation-head-image, .sponsorship-head-image {
         flex: 1 1 50%;
         min-width: 0;
     }
