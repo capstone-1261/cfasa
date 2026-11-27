@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function closeAll(exceptLi = null) {
 		parentItems.forEach((li) => {
-			if (li !== exceptLi) {
+			if (li !== exceptLi && !(exceptLi && li.contains(exceptLi))) {
 				li.classList.remove("is-open");
-				const btn = li.querySelector(".submenu-toggle");
+				const btn = li.querySelector(":scope > .menu-item-row > .submenu-toggle");
 				if (btn) btn.setAttribute("aria-expanded", "false");
 			}
 		});
