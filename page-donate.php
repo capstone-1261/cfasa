@@ -29,14 +29,14 @@
                 <p>Make a general donation or contribute to a fundraising campaign or event in support of the Centre for Autism Services Alberta programs or services.</p>
             </div>
             <div class="donation-head-image">
-                /* image goes here */
+                <img src="<?php echo get_template_directory_uri(); ?>/img/give-donation-intro.png" alt="An image of someone giving a gift">
             </div>  
         </section>
     
     <section class="donating-section">
         <div class="donation-secondary">
                 <div class="donation-secondary-image">
-                    /* image goes here */
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/love-donation.png" alt="Someone holding a heart with the word donate">
                 </div>
                 <div class="donation-secondary-text">
                     <h2>We are very proud of the work we do.</h3>

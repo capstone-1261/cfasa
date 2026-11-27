@@ -55,6 +55,10 @@ main {
     border-radius: 24px 24px 0 0;
 }
 
+.donation-head-text {
+    padding-bottom: 1rem;
+}
+
 .donation-head-text h2, .careers-head-text h2 {
     margin-bottom: 0;
     align-self: stretch;
@@ -78,7 +82,23 @@ main {
     flex: 1 0 0;
     align-self: stretch;
     border-radius: 24px;
-    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.donation-head-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.donation-head-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.donation-head-image {
+    min-width: 400px;
 }
 
 .careers-head-text h3 {
@@ -229,7 +249,14 @@ main {
     flex-shrink: 0;
     aspect-ratio: 364/363;
     border-radius: 200px;
-    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+    background: url("../img/donation-office.png") lightgray 50% / cover no-repeat;
+    position: relative;
+}
+
+.donation-secondary-image img {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .donation-secondary-text {
@@ -2383,6 +2410,14 @@ Queries
 
     .council-info-blocks {
         flex-direction: column;
+    }
+
+
+
+    /* IMAGE QUERIES */
+    .donation-head-image {
+        flex: 1 1 50%;
+        min-width: 0;
     }
 }
 
