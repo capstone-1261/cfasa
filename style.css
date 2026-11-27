@@ -10,25 +10,778 @@ Version: 1.0
 Custom Global Styles (Outside of JSON Capabilities
 =================================================== 
 */
-main {
-    padding: var(--wp--preset--spacing--large);
+
+html {
+    scroll-behavior: smooth;
+    /* font smoothing only works on macOS*/
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--wp--preset--color--not-quite-white);
+}
+
+section {
+    width: min(calc(100% - 2rem), 1400px);
+    margin-inline: auto;
+    padding: var(--wp--preset--spacing--x-large) 0;
+}
+
+/* Ensure the template parts inner containers line up with the main content */
+.promo-banner div.wp-block-group, .hero-banner div.wp-block-group {
+  width: min(calc(100% - 2rem), 1400px);
+  margin: auto;
+}
+
+[data-filter-item][hidden],
+[data-filter-empty][hidden] {
+    display: none !important;
+}
+
+h5 {
+    color: var(--wp--preset--color--white);
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.tiny-hint {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.small-condensed{
+    font-size: 13px;
+    font-family: "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 19px;
+  }
+
+
+
+/* 
+==========================
+Focus Ring Styles
+========================== 
+*/
+
+/* Base keyboard focus style for links, buttons, and inputs in main content */
+main :is( a, button, input):focus-visible {
+  outline: 2px solid var(--wp--preset--color--cyan-cfasa-dark); /* High contrast on light backgrounds */
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Override for a dark footer and dark headers */
+footer :is(a, button, input):focus-visible,
+header :is(a, button, input):focus-visible {
+    outline: 2px solid var(--wp--preset--color--yellow-cfasa); /* High contrast on dark backgrounds */
+    outline-offset: 3px;
+    border-radius: 4px; 
+}
+
+/* 
+==========================
+Drop Shadow Styles
+========================== 
+*/
+
+  .big-shadow{
+    box-shadow: 0px 16px 36.099998474121094px -1px rgba(0, 0, 0, 0.39);
+  }
+  .little-shadow{
+    box-shadow: 0px 6px 16.100000381469727px  rgba(0, 0, 0, 0.25);
+  }
+
+  .high-spread-drop-shadow{
+    box-shadow: 0px 16px 27px  rgba(0, 0, 0, 0.09);
+  }
+
+  .inner-shadow{
+    box-shadow: inset 0px 4px 13.5px  rgba(0, 0, 0, 0.07);
+  }
+  
 
 /* 
 ==========================
 Header + Navigation Styles
 ========================== 
 */
-.header-inner {
+header {
+    background-color: var(--wp--preset--color--navy-blue-cfasa);
+    color: var(--wp--preset--color--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+header a {
+    color: var(--wp--preset--color--white);
+    text-decoration: none;
+}
+.header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
-.header-inner nav ul {
+/* Logo size responds to screen size */
+.header-container .site-logo .header-logo svg {
+  width: 100%;
+  height: 70%;
+}
+
+.header-container .site-logo {
+  padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--base);
+}
+
+header nav.main-navigation {
+  position: relative;
+  top: 50%;
+  right: 2%;
+}
+
+nav.main-navigation .menu-item-row {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile Menu Open State */
+nav.main-navigation.is-mobile-open {
+  background-color: var(--wp--preset--color--navy-blue-cfasa);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: visible;
+  overflow-x: hidden;
+  z-index: 1000;
+
+
+  & ul.sub-menu {
+    padding-left: 0;
+  }
+}
+
+nav.main-navigation.is-mobile-open ul.nav-menu li.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+nav.main-navigation.is-mobile-open .menu-item-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  a {
+    padding: 0 0 0 0.5rem;
+  }
+}
+
+nav.main-navigation.is-mobile-open .menu-item-row > a {
+  flex: 1;
+}
+
+nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has-children) > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-left: 0.5rem;
+}
+
+
+
+
+/* Mobile Hamburger Button */
+.menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.menu-toggle span.menu-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 18%;
+    text-transform: uppercase;
+}
+
+
+
+.nav-menu {
+  display: none;
+  padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--base);
+}
+
+.main-navigation.is-mobile-open .nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Menu Row Layout (Link + Toggle Button side-by-side) */
+.nav-menu li {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.nav-menu a {
+    flex: 1;
+    display: block;
+    text-wrap: nowrap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+/* Submenu Toggle Button */
+.submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px; /* Accessible touch target */
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.submenu-toggle span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: var(--wp--preset--color--cyan-cfasa);
+  font-size: 1.6rem;
+}
+
+.submenu-toggle[aria-expanded="true"] span.arrow {
+  transform: rotate(90deg);
+  color: var(--wp--preset--color--yellow-cfasa)
+}
+
+/* Mobile Nested Submenu Accordion */
+.nav-menu .sub-menu {
+  display: none;
+  width: 100%;
+  background-color: var(--wp--preset--color--faded-navy-blue-cfasa);
+  border: 1px solid var(--wp--preset--color--yellow-cfasa);
+  border-radius: 26px;
+  padding-top: var(--wp--preset--spacing--large);
+}
+
+.nav-menu li.is-open > .sub-menu {
+  display: block;
+}
+
+.nav-menu .sub-menu a {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  white-space: normal;
+  overflow-wrap: normal;
+  min-width: 0;
+}
+
+@media (max-width: 929px) {
+  html.mobile-menu-open,
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  nav.main-navigation.is-mobile-open {
+    height: var(--mobile-menu-height, 100vh);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
+  nav.main-navigation.is-mobile-open .nav-menu > li.menu-item {
+    margin-bottom: var(--wp--preset--spacing--large);
+    width: 100%;
+
+  }
+
+  /* nav.main-navigation.is-mobile-open .menu-item-row {
+    min-height: 56px;
+    gap: 0.5rem;
+  } */
+
+  nav.main-navigation.is-mobile-open .menu-item-row > a,
+  nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has-children) > a {
+    min-width: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: normal;
+  }
+
+  nav.main-navigation.is-mobile-open .submenu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border-radius: 26px;
+    background-color: var(--wp--preset--color--cyan-cfasa);
+  }
+
+  .menu-item-has-children {
+    gap: 0.5rem;
+  }
+
+  nav.main-navigation.is-mobile-open .submenu-toggle span {
+    color: var(--wp--preset--color--navy-blue-cfasa);
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  nav.main-navigation.is-mobile-open .submenu-toggle[aria-expanded="true"] {
+    background-color: var(--wp--preset--color--yellow-cfasa);
+  }
+
+  nav.main-navigation.is-mobile-open .nav-menu .sub-menu a {
+    min-height: 52px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+
+/* High-Contrast Keyboard Focus */
+.main-navigation :is(a, button):focus-visible {
+  outline: 2px solid var(--wp--preset--color--cyan-cfasa-dark);
+  outline-offset: -2px; /* Inset so mobile borders don't clip the ring */
+  border-radius: 4px;
+}
+
+/* =========================================
+   Large Breakpoint ()
+   ========================================= */
+@media (min-width: 930px) {
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu a {
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  .nav-menu > .menu-item-has-children {
+    position: relative;
+  }
+
+  .nav-menu .menu-item {
+    height: 100%;
+  }
+
+  .submenu-toggle {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  ul.sub-menu li.menu-item:hover {
+    background-color: var(--wp--preset--color--faded-navy-blue-cfasa);
+    box-shadow: inset 0px 4px 13.5px rgba(0, 0, 0, 0.07);
+  }
+
+  ul.sub-menu li.menu-item a {
+    color: var(--wp--preset--color--white);
+  }
+  ul.sub-menu li.menu-item a:hover {
+    color: var(--wp--preset--color--white);
+  }
+
+  ul.sub-menu li.menu-item a:focus {
+    color: var(--wp--preset--color--white);
+  }
+
+  /* Floating Desktop Dropdown */
+  .nav-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    width: max-content;
+    min-width: 12rem;
+    max-width: 90vw;
+    background: var(--wp--preset--color--navy-blue-cfasa);
+    border-radius: 0px 0px 24px 24px;
+    z-index: 100;
+    box-shadow: 0px 16px 27px rgba(0, 0, 0, 0.09);
+  }
+
+  .nav-menu .sub-menu {
+    padding: var(--wp--preset--spacing--large) 0;
+  }
+
+  .main-navigation :is(a, button):focus-visible {
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submenu-toggle span {
+    transition: none;
+  }
+} 
+
+
+/* =========================================
+   Largest Breakpoint (1200px)
+   ========================================= */
+@media (min-width: 1200px) {
+  .nav-menu a {
+    font-weight: 500;
+    font-size: 14px;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+}
+
+/* 
+==========================
+Footer Styles
+========================== 
+*/
+
+footer {
+    background-color: var(--wp--preset--color--navy-blue-cfasa);
+    padding: var(--wp--preset--spacing--large) var(--wp--preset--spacing--base);
+}
+
+footer div.footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--wp--preset--spacing--base);
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    color: var(--wp--preset--color--white);
+}
+
+footer div.footer-details, div.footer-links, div.footer-logos, div.footer-accreditation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--wp--preset--spacing--base);
+    width: 100%;
+}
+
+div.footer-logo svg {
+    width: 10%;
+    min-width: 100px;
+    max-width: 200px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+footer div.back-to-top a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--wp--preset--spacing--small);
+    flex-wrap: nowrap;
+    width: 162px;
+    text-decoration: none;
+    color: var(--wp--preset--color--white);
+}
+
+footer div.back-to-top a svg {
+    width: 44px;
+    height: 44px;
+}
+
+/* Back to Top button hover style */
+footer div.back-to-top a:hover {
+    color: var(--wp--preset--color--cyan-cfasa);
+}
+
+footer div.footer-contact {
+    padding: 0 var(--wp--preset--spacing--base);
+    border-left: 1px solid var(--wp--preset--color--cyan-cfasa-dark);
+    color: var(--wp--preset--color--not-quite-white);
+    min-width: 158px;
+}
+
+div.footer-details > :nth-child(-n +2){
+    min-width: 224px;
+}
+
+footer div.footer-contact h5 {
+    margin-top: 0;
+    margin-bottom: var(--wp--preset--spacing--small);
+}
+
+footer div.footer-details p, div.footer-accreditation p {
+    margin: 0;
+    padding: 0;
+}
+
+
+footer div.footer-accreditation {
+    align-items: center;
+    gap: var(--wp--preset--spacing--small);
+    justify-content: flex-start;
+    max-width: 400px;
+    padding: var(--wp--preset--spacing--base) 0;
+}
+
+footer div.footer-accreditation img {
+    width: 75px;
+    height: 75px;
+}
+
+footer nav.footer-social ul {
     display: flex;
     gap: var(--wp--preset--spacing--base);
+    width: 100%;
+    list-style: none;
+
+}
+
+footer nav.footer-social ul li {
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    & a:hover {
+        filter: brightness(1.3);
+    }
+}
+
+/* Ensure social media icon links have a box around the whole icon */
+    .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+    }
+
+nav.footer-legal {
+    display: flex;
+    gap: var(--wp--preset--spacing--x-large);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid var(--wp--preset--color--not-quite-white);
+    padding: var(--wp--preset--spacing--base) 0;
+}
+
+nav.footer-legal a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--not-quite-white);
+    letter-spacing: 1.4px;
+}
+
+nav.footer-legal a:hover {
+    color: var(--wp--preset--color--cyan-cfasa);
+}
+
+div.footer-copyright {
+    width: 100%;
+    color: var(--wp--preset--color--not-quite-white);
+    text-align: center;
+    padding: var(--wp--preset--spacing--small) 0;
+}
+
+/* Responsive Footer Styles */
+@media (max-width: 960px) {
+    footer {
+        padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--base);
+    }
+    footer div.footer-details {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        gap: var(--wp--preset--spacing--large);
+    }
+    footer div.footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    footer nav.footer-social ul {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: var(--wp--preset--spacing--small) 0;
+    }
+}
+
+@media (max-width: 600px) {
+    footer div.footer-details {
+        grid-template-columns: 1fr;
+    }
+    footer div.footer-contact {
+        border-left: none;
+        padding: 0;
+    }
+    footer div.footer-accreditation {
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--wp--preset--spacing--base);
+        align-items: flex-start;
+    }
+    footer nav.footer-social ul li a {
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    footer nav.footer-legal {
+        flex-direction: column;
+        gap: var(--wp--preset--spacing--small);
+        align-items: start;
+        padding-top: var(--wp--preset--spacing--large);
+    }
+    footer div.footer-copyright {
+        text-align: start;
+    }
+    
 }
 
 
+/* 
+==========================
+Filter Options Styles - for pages with filterable content (e.g., Resources)
+========================== 
+*/
+
+.filter-options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--wp--preset--spacing--small);
+  margin-bottom: var(--wp--preset--spacing--large);
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wp--preset--spacing--small);
+}
+
+.filter-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--base);
+  border-radius: 24px;
+  background-color: var(--wp--preset--color--cyan-pastel, #e9f8f5);
+  color: var(--wp--preset--color--navy-blue-cfasa, #0c2542);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+
+
+
+/* 
+==========================
+Montserrat Font Styles
+========================== 
+*/
+
+/* montserrat-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/montserrat-v31-latin-300.woff2') format('woff2'); 
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+}
+
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/montserrat-v31-latin-500.woff2') format('woff2');
+}
+
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/montserrat-v31-latin-600.woff2') format('woff2'); 
+}
+
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/montserrat-v31-latin-700.woff2') format('woff2');
+}
+
+/* montserrat-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/montserrat-v31-latin-800.woff2') format('woff2'); 
+}
+
+/* montserrat-900 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/fonts/montserrat-v31-latin-900.woff2') format('woff2');
+}

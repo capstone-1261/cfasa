@@ -14,7 +14,6 @@
     }
     ?>
 
-    <p>This is a test</p>
 </main>
 
 <?php get_footer(); ?>

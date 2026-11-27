@@ -1,0 +1,141 @@
+document.addEventListener("DOMContentLoaded", () => {
+	const nav = document.querySelector(".main-navigation");
+	if (!nav) return;
+
+	// 1. Mobile drawer toggle
+	const mobileBtn = document.getElementById("menu-toggle");
+	function updateMobileMenuHeight() {
+		if (!nav.classList.contains("is-mobile-open")) return;
+
+		const availableHeight = window.innerHeight - nav.getBoundingClientRect().top;
+		nav.style.setProperty("--mobile-menu-height", `${Math.max(0, availableHeight)}px`);
+	}
+
+	function setMobileMenuOpen(isOpen) {
+		nav.classList.toggle("is-mobile-open", isOpen);
+		document.documentElement.classList.toggle("mobile-menu-open", isOpen);
+		document.body.classList.toggle("mobile-menu-open", isOpen);
+
+		if (mobileBtn) mobileBtn.setAttribute("aria-expanded", String(isOpen));
+		if (isOpen) {
+			updateMobileMenuHeight();
+		} else {
+			nav.style.removeProperty("--mobile-menu-height");
+		}
+	}
+
+	if (mobileBtn) {
+		mobileBtn.addEventListener("click", () => {
+			const isOpen = mobileBtn.getAttribute("aria-expanded") === "true";
+			setMobileMenuOpen(!isOpen);
+		});
+	}
+
+	// 2. Inject accessible buttons into WordPress parent items
+	const parentItems = nav.querySelectorAll(".menu-item-has-children");
+
+	function closeAll(exceptLi = null) {
+		parentItems.forEach((li) => {
+			if (li !== exceptLi && !(exceptLi && li.contains(exceptLi))) {
+				li.classList.remove("is-open");
+				const btn = li.querySelector(":scope > .menu-item-row > .submenu-toggle");
+				if (btn) btn.setAttribute("aria-expanded", "false");
+			}
+		});
+	}
+
+	parentItems.forEach((li, index) => {
+		const link = li.querySelector(":scope > a");
+		const submenu = li.querySelector(":scope > .sub-menu");
+		if (!link || !submenu) return;
+
+		const submenuId = submenu.id || `submenu-${index}`;
+		submenu.id = submenuId;
+
+		const btn = document.createElement("button");
+		btn.type = "button";
+		btn.className = "submenu-toggle";
+		btn.setAttribute("aria-expanded", "false");
+		btn.setAttribute("aria-controls", submenuId);
+		btn.setAttribute("aria-label", `Toggle ${link.textContent.trim()} submenu`);
+		btn.innerHTML = '<span class="arrow" aria-hidden="true">▾</span>';
+
+		const itemRow = document.createElement("div");
+		itemRow.className = "menu-item-row";
+		link.before(itemRow);
+		itemRow.append(link, btn);
+
+		// Click or Enter/Space to toggle
+		btn.addEventListener("click", () => {
+			const isOpen = btn.getAttribute("aria-expanded") === "true";
+			closeAll(li);
+			btn.setAttribute("aria-expanded", String(!isOpen));
+			li.classList.toggle("is-open", !isOpen);
+		});
+
+		// Desktop hover
+		li.addEventListener("mouseenter", () => {
+			if (window.innerWidth >= 900) {
+				closeAll(li);
+				btn.setAttribute("aria-expanded", "true");
+				li.classList.add("is-open");
+			}
+		});
+
+		li.addEventListener("mouseleave", () => {
+			if (window.innerWidth >= 900) {
+				btn.setAttribute("aria-expanded", "false");
+				li.classList.remove("is-open");
+			}
+		});
+
+		// Close automatically when user Tabs out of this dropdown item
+		li.addEventListener("focusout", (e) => {
+			if (!li.contains(e.relatedTarget)) {
+				btn.setAttribute("aria-expanded", "false");
+				li.classList.remove("is-open");
+			}
+		});
+	});
+
+	// 3. Escape key & outside click
+	nav.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") {
+			const openLi = nav.querySelector("li.is-open");
+			if (openLi) {
+				const btn = openLi.querySelector(".submenu-toggle");
+				closeAll();
+				if (btn) btn.focus();
+			} else if (nav.classList.contains("is-mobile-open")) {
+				setMobileMenuOpen(false);
+				if (mobileBtn) mobileBtn.focus();
+			}
+		}
+	});
+
+	document.addEventListener("click", (e) => {
+		if (!nav.contains(e.target)) closeAll();
+	});
+
+	// Reset mobile menu if window resizes to desktop width
+	window.addEventListener("resize", () => {
+		if (window.innerWidth >= 900 && nav.classList.contains("is-mobile-open")) {
+			setMobileMenuOpen(false);
+			closeAll();
+		} else {
+			updateMobileMenuHeight();
+		}
+	});
+
+	if (window.visualViewport) {
+		window.visualViewport.addEventListener("resize", updateMobileMenuHeight);
+	}
+
+	// Close mobile menu when user Tabs completely out of the navigation
+	nav.addEventListener("focusout", (e) => {
+		if (window.innerWidth < 900 && !nav.contains(e.relatedTarget)) {
+			setMobileMenuOpen(false);
+			closeAll();
+		}
+	});
+});

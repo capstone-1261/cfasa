@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('parts/about-header'); ?>
-<?php get_template_part('parts/hero-banner-basic'); ?>
+<?php get_template_part('parts/hero-banner-minimal'); ?>
 
 <section class="commitments-container">
     <h2>Our Commitments</h2>

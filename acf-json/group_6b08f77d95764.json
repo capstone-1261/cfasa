@@ -1,0 +1,146 @@
+{
+    "key": "group_6b08f77d95764",
+    "title": "External Resources",
+    "fields": [
+        {
+            "key": "field_6b08f7ff26c28",
+            "label": "Resource Logo",
+            "name": "resource_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload a small logo or image that describes the site \/ organization",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "0",
+                "class": "resource-logo",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6b08f77e26c27",
+            "label": "Resource Link",
+            "name": "resource_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Paste the link to the external resource",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6b08f82a26c29",
+            "label": "Resource Title",
+            "name": "resource_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "The title of the resource.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6b08f83f26c2a",
+            "label": "Resource Description",
+            "name": "resource_description",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter a short description for the resource and what topics it covers",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 1000,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6b0904966279f",
+            "label": "Resource Tags",
+            "name": "resource_tags",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "post_tag",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "19"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Add external resources to the Resources page",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1795753332
+}
