@@ -138,8 +138,7 @@ header nav.main-navigation {
 nav.main-navigation .menu-item-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
 }
 
 /* Mobile Menu Open State */
@@ -149,7 +148,7 @@ nav.main-navigation.is-mobile-open {
   top: 100%;
   right: 0;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   overflow-y: visible;
   overflow-x: hidden;
   z-index: 1000;
@@ -164,6 +163,7 @@ nav.main-navigation.is-mobile-open ul.nav-menu li.menu-item {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: flex-start;
 }
 
 nav.main-navigation.is-mobile-open .menu-item-row {
@@ -206,12 +206,6 @@ nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has
     font-size: 10px;
     line-height: 18%;
     text-transform: uppercase;
-}
-
-.menu-item span#mobile-expand-hint {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: var(--wp--preset--color--white)
 }
 
 
@@ -286,6 +280,64 @@ nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has
   white-space: normal;
   overflow-wrap: normal;
   min-width: 0;
+}
+
+@media (max-width: 929px) {
+  html.mobile-menu-open,
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  nav.main-navigation.is-mobile-open {
+    height: var(--mobile-menu-height, 100vh);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
+  nav.main-navigation.is-mobile-open .nav-menu > li.menu-item {
+    margin-bottom: 0.25rem;
+    width: 100%;
+
+  }
+
+  /* nav.main-navigation.is-mobile-open .menu-item-row {
+    min-height: 56px;
+    gap: 0.5rem;
+  } */
+
+  nav.main-navigation.is-mobile-open .menu-item-row > a,
+  nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has-children) > a {
+    min-width: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  nav.main-navigation.is-mobile-open .submenu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: var(--wp--preset--color--cyan-cfasa);
+  }
+
+  nav.main-navigation.is-mobile-open .submenu-toggle span {
+    color: var(--wp--preset--color--navy-blue-cfasa);
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  nav.main-navigation.is-mobile-open .submenu-toggle[aria-expanded="true"] {
+    background-color: var(--wp--preset--color--yellow-cfasa);
+  }
+
+  nav.main-navigation.is-mobile-open .nav-menu .sub-menu a {
+    min-height: 52px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }
 
 
