@@ -196,7 +196,7 @@
 				{
 					"name": "Arial",
 					"slug": "arial",
-					"fontFamily": "Arial, Helvetica, sans"
+					"fontFamily": "Arial, Helvetica, sans-serif"
 				},
 				{
 					"name": "Montserrat",
@@ -246,6 +246,7 @@
 					"text": "#0C2542"
 				},
 				"typography": {
+					"fontFamily": "Montserrat, sans-serif",
 					"fontWeight": "700",
 					"lineHeight": "1.2"
 				}

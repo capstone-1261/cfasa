@@ -15,7 +15,7 @@ Custom Global Styles (Outside of JSON Capabilities
 
 html {
     scroll-behavior: smooth;
-    /* font smoothing only works on mac*/
+    /* font smoothing only works on macOS*/
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -27,14 +27,14 @@ main {
 
 h5 {
     color: var(--wp--preset--color--white);
-    font-family: 'Montserrat';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
     line-height: 20px;
 }
 
 .tiny-hint {
-    font-family: 'Montserrat';
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 13px;
@@ -45,7 +45,7 @@ h5 {
 
 .small-condensed{
     font-size: 13px;
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     font-weight: 400;
     line-height: 19px;
   }
@@ -104,7 +104,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    max-height: 15vh;
+
 }
 
 header a {
@@ -130,11 +130,64 @@ header a {
 }
 
 header nav.main-navigation {
-  position: absolute;
+  position: relative;
   top: 50%;
-  transform: translateY(-50%);
   right: 2%;
 }
+
+nav.main-navigation .menu-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Mobile Menu Open State */
+nav.main-navigation.is-mobile-open {
+  background-color: var(--wp--preset--color--navy-blue-cfasa);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 80vh;
+  overflow-y: visible;
+  overflow-x: hidden;
+  z-index: 1000;
+
+
+  & ul.sub-menu {
+    padding-left: 0;
+  }
+}
+
+nav.main-navigation.is-mobile-open ul.nav-menu li.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+nav.main-navigation.is-mobile-open .menu-item-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  a {
+    padding: 0 0 0 0.5rem;
+  }
+}
+
+nav.main-navigation.is-mobile-open .menu-item-row > a {
+  flex: 1;
+}
+
+nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has-children) > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-left: 0.5rem;
+}
+
+
 
 
 /* Mobile Hamburger Button */
@@ -154,6 +207,13 @@ header nav.main-navigation {
     line-height: 18%;
     text-transform: uppercase;
 }
+
+.menu-item span#mobile-expand-hint {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--white)
+}
+
 
 
 .nav-menu {
@@ -204,7 +264,7 @@ header nav.main-navigation {
   font-size: 1.6rem;
 }
 
-.submenu-toggle[aria-expanded="true"] span {
+.submenu-toggle[aria-expanded="true"] span.arrow {
   transform: rotate(90deg);
   color: var(--wp--preset--color--yellow-cfasa)
 }
@@ -213,8 +273,7 @@ header nav.main-navigation {
 .nav-menu .sub-menu {
   display: none;
   width: 100%;
-  border-top: 1px solid var(--wp--preset--color--light-gray);
-  background-color: var(--wp--preset--color--navy-blue-cfasa);
+  background-color: var(--wp--preset--color--faded-navy-blue-cfasa);
 }
 
 .nav-menu li.is-open > .sub-menu {
@@ -223,7 +282,10 @@ header nav.main-navigation {
 
 .nav-menu .sub-menu a {
   padding: 12px 16px 12px 32px; /* Indented on mobile */
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  white-space: normal;
+  overflow-wrap: normal;
+  min-width: 0;
 }
 
 
@@ -271,14 +333,13 @@ header nav.main-navigation {
   }
 
   ul.sub-menu li.menu-item a {
-  font-family: 'Arial';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--wp--preset--color--not-quite-white);
+    color: var(--wp--preset--color--white);
+  }
+  ul.sub-menu li.menu-item a:hover {
+    color: var(--wp--preset--color--white);
   }
 
-  ul.sub-menu li.menu-item a:hover {
+  ul.sub-menu li.menu-item a:focus {
     color: var(--wp--preset--color--white);
   }
 

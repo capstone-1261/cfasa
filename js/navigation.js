@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (!nav) return;
 
 	// 1. Mobile drawer toggle
-	const mobileBtn = nav.querySelector(".menu-toggle");
+	const mobileBtn = document.getElementById("menu-toggle");
 	if (mobileBtn) {
 		mobileBtn.addEventListener("click", () => {
 			const isOpen = mobileBtn.getAttribute("aria-expanded") === "true";
@@ -39,9 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		btn.setAttribute("aria-expanded", "false");
 		btn.setAttribute("aria-controls", submenuId);
 		btn.setAttribute("aria-label", `Toggle ${link.textContent.trim()} submenu`);
-		btn.innerHTML = '<span aria-hidden="true">▾</span>';
+		btn.innerHTML = '<span class="arrow" aria-hidden="true">▾</span>';
 
-		link.after(btn);
+		const itemRow = document.createElement("div");
+		itemRow.className = "menu-item-row";
+		link.before(itemRow);
+		itemRow.append(link, btn);
 
 		// Click or Enter/Space to toggle
 		btn.addEventListener("click", () => {
