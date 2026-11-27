@@ -265,7 +265,8 @@ nav.main-navigation.is-mobile-open ul.nav-menu > li.menu-item:not(.menu-item-has
 .nav-menu .sub-menu {
   display: none;
   width: 100%;
-  background-color: var(--wp--preset--color--yellow-cfasa);
+  background-color: var(--wp--preset--color--faded-navy-blue-cfasa);
+  border: 1px solid var(--wp--preset--color--yellow-cfasa);
   border-radius: 26px;
   padding-top: var(--wp--preset--spacing--large);
 }
