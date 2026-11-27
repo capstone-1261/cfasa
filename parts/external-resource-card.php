@@ -52,8 +52,8 @@ foreach ( $resource_tags as $resource_tag ) {
   <?php if ( $resource_link ) : ?>
     <div class="resource-card-footer">
       <div class="resource-full-link">
-        <p class="small-condensed">Full Link:</p>
-        <a target="_blank" rel="noopener noreferrer" class="small-condensed" href="<?php echo esc_url( $resource_link ); ?>"><?php echo esc_html( $resource_link ); ?></a>
+        <p class="small-condensed">Full Link: <?php echo esc_url( $resource_link ); ?></p>
+        
       </div>
       <?php if ( $resource_tags ) : ?>
         <div class="resource-tags">

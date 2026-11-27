@@ -15,7 +15,7 @@ $resource_tags = $resource_ids
     array(
       'taxonomy'   => 'post_tag',
       'object_ids' => $resource_ids,
-      'hide_empty' => true,
+      'hide_empty' => false,
     )
   )
   : array();
