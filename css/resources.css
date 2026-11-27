@@ -1,10 +1,6 @@
-/* .external-resources {
-  width: 100%;
-  max-width: 1400px;
-  margin-inline: auto;
-} */
 
-.external-resources .filter-options-container {
+
+.filter-options-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12,13 +8,13 @@
   margin-bottom: 2rem;
 }
 
-.external-resources .filter-options {
+.filter-options {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.external-resources .filter-option {
+.filter-option {
   padding: 0.5rem 1rem;
   border: 1px solid var(--wp--preset--color--faded-navy-blue-cfasa, #213e5b);
   border-radius: 20px;
@@ -27,13 +23,13 @@
   cursor: pointer;
 }
 
-.external-resources .filter-option:hover,
-.external-resources .filter-option[aria-pressed="true"] {
+.filter-option:hover,
+.filter-option[aria-pressed="true"] {
   background: var(--wp--preset--color--navy-blue-cfasa, #0c2542);
   color: #fff;
 }
 
-.external-resources .filter-clear {
+.filter-clear {
   padding: 0.5rem 0;
   border: 0;
   background: transparent;
@@ -42,7 +38,7 @@
   text-decoration: underline;
 }
 
-.external-resources .filter-clear:disabled {
+.filter-clear:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
@@ -234,4 +230,47 @@
   .external-resources .resource-full-link {
     flex-wrap: wrap;
   }
+}
+
+
+
+/* News & Media Page Styles */
+section.news-and-media {
+  .news-article-container {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .news-article-card {
+    display: flex;
+    width: 437.333px;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 20px;
+    background: var(--wp--preset--color--white, #fff);
+    overflow: clip;
+  }
+
+  .news-article-card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+    padding: 1rem;
+  }
+
+  .news-article-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .news-article-image img {
+    object-fit: cover;
+  }
+
+
+
 }
