@@ -55,13 +55,10 @@
   <a href="/events-and-workshops/workshops-on-demand" class="icon-btn-light">Take Me There</a>
   
 </div>
+</main>
 
 <!-- Component: Promo banner -->
 <?php get_template_part('parts/promo-banner'); ?>
-
-<?php echo do_blocks( '<!-- wp:pattern {"slug":"cfasab-theme/promo-banner"} /-->' ); ?>
-
-
 
 
 <?php get_footer(); ?>
