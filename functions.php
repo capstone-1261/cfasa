@@ -11,7 +11,9 @@ function centre_autism_theme_setup() {
     register_nav_menus(array(
         'main-nav' => 'Main Navigation',
         'about-nav' => 'About Us Navigation',
-        'involved-nav' => 'Get Involved Navigation'
+        'involved-nav' => 'Get Involved Navigation',
+        'programs-nav' => 'Programs & Services Navigation',
+        'footer-nav' => 'Footer Navigation'
     ));
 }
 
@@ -109,18 +111,28 @@ add_action('wp_enqueue_scripts', 'cfasa_get_involved_styles');
 
 /* End of Get Involved CSS */
 
-function cfasa_external_resource_card_styles() {
-    if ( is_page( 'resources' ) ) {
+/* Resources CSS */
+
+function cfasa_resources_styles() {
+
+    if ( is_page(array(
+        'resources',
+        'news-media',
+        'research-opportunities',
+    ) ) ) {
+
         wp_enqueue_style(
-            'cfasa-external-resource-card',
-            get_theme_file_uri( '/css/external-resource-card.css' ),
-            array( 'centre-autism-style' ),
+            'cfasa-resources',
+            get_theme_file_uri('/css/resources.css'),
+            array('centre-autism-style'),
             '1.0.0'
         );
+
     }
 }
 
-add_action( 'wp_enqueue_scripts', 'cfasa_external_resource_card_styles' );
+add_action('wp_enqueue_scripts', 'cfasa_resources_styles');
+
 
 function cfasa_enqueue_content_filters() {
     wp_enqueue_script(
