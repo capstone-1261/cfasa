@@ -4,11 +4,6 @@
 <main>
 
 
-<div class="news-and-media-intro">
-  <h2>News & Media</h2>
-  <h3>News and media updates from the Centre for Autism Services Alberta</h3>
-</div>
-
 <div class="news-and-media">
     <!-- Filter options -->
     <div class="news-and-media-filters">

@@ -1,29 +1,17 @@
-<?php
-/**
- * Title: Promo Banner
- * Slug: cfasab-theme/promo-banner
- * Categories: banner, call-to-action
- * Description: Promotional banner with teal fallback background, headline, and register button.
- */
-?>
+<!-- wp:cover {"url":"http://localhost:10016/wp-content/uploads/2026/11/teal-slide-volunteers-1-1024x373.jpg","id":137,"hasParallax":true,"dimRatio":30,"overlayColor":"cyan-cfasa-dark","isUserOverlayColor":true,"minHeight":272,"minHeightUnit":"px","sizeSlug":"large","metadata":{"name":"Promo Banner Background Image"},"align":"center","style":{"color":{"duotone":"unset"},"spacing":{"blockGap":"0rem"}},"layout":{"type":"default"}} -->
+<div class="promo-banner wp-block-cover aligncenter has-parallax" style="min-height:272px"><div class="wp-block-cover__image-background wp-image-137 size-large has-parallax" style="background-position:50% 50%;background-image:url(http://localhost:10016/wp-content/uploads/2026/11/teal-slide-volunteers-1-1024x373.jpg)"></div><span aria-hidden="true" class="wp-block-cover__background has-cyan-cfasa-dark-background-color has-background-dim-30 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"metadata":{"name":"Promo Banner Content"},"className":"alignwide","style":{"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"},"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|0"},"@mobile":{"spacing":{"blockGap":"var:preset|spacing|base"}},"css":"max-width: 1400px;"},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide has-custom-css" style="margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0);padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"metadata":{"name":"Promo Banner Title","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"display","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontStyle":"normal","fontWeight":"900"},"@tablet":{"typography":{"fontSize":"var:preset|font-size|display-mobile"}},"@mobile":{"typography":{"fontSize":"var:preset|font-size|display-mobile"}}},"textColor":"white","fontSize":"display","fontFamily":"montserrat"} -->
+<h2 class="wp-block-heading display has-white-color has-text-color has-link-color has-montserrat-font-family has-display-font-size" style="font-style:normal;font-weight:900">FALL PROGRAMS NOW OPEN</h2>
+<!-- /wp:heading -->
 
-<!-- wp:group {"style":{"backgroundColor":"cyan-cfasa-dark"},"spacing":{"padding":{"top":"32px","bottom":"32px","left":"32px","right":"32px"},"margin":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0"},"blockGap":"var:preset|spacing|0"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group has-background" style="background-color:var(--wp--preset--color--cyan-cfasa-dark);margin-top:var(--wp--preset--spacing--0);margin-bottom:var(--wp--preset--spacing--0);padding-top:32px;padding-right:32px;padding-bottom:32px;padding-left:32px">
+<!-- wp:heading {"level":3,"metadata":{"name":"Promo Banner Text","bindings":{"__default":{"source":"core/pattern-overrides"}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"padding":{"top":"var:preset|spacing|0","bottom":"var:preset|spacing|0","left":"var:preset|spacing|0","right":"var:preset|spacing|0"}},"@tablet":{"typography":{"fontSize":"1rem"}},"@mobile":{"typography":{"fontSize":"1rem"}}},"textColor":"white","fontSize":"h3"} -->
+<h3 class="wp-block-heading has-white-color has-text-color has-link-color has-h-3-font-size" style="padding-top:var(--wp--preset--spacing--0);padding-right:var(--wp--preset--spacing--0);padding-bottom:var(--wp--preset--spacing--0);padding-left:var(--wp--preset--spacing--0)">Meet new friends and try something new this fall!</h3>
+<!-- /wp:heading -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"textTransform":"uppercase"}},"textColor":"white","fontSize":"display"} -->
-<p class="has-white-color has-text-color has-link-color has-display-font-size" style="text-transform:uppercase">Fall Programs NOW OPEN!</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","fontSize":"h1"} -->
-<p class="has-white-color has-text-color has-link-color has-h-1-font-size">Meet new friends and try something new this fall!</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:buttons -->
-<div class="wp-block-buttons">
-  <!-- wp:button {"backgroundColor":"white","textColor":"navy-blue-cfasa","style":{"elements":{"link":{"color":{"text":"var:preset|color|navy-blue-cfasa"}}},"dimensions":{"width":"174px"},"border":{"radius":{"topLeft":"24px","topRight":"24px","bottomLeft":"24px","bottomRight":"24px"}},"spacing":{"padding":{"left":"0px","right":"0px"}}},"fontSize":"button-label"} -->
-  <div class="wp-block-button">
-    <a class="wp-block-button__link has-navy-blue-cfasa-color has-white-background-color has-text-color has-background has-link-color has-button-label-font-size has-custom-font-size wp-element-button" style="border-top-left-radius:24px;border-top-right-radius:24px;border-bottom-left-radius:24px;border-bottom-right-radius:24px;padding-right:0px;padding-left:0px">Register</a>
-  </div>
+<!-- wp:buttons {"metadata":{"name":"Call to Action Button"},"style":{"@mobile":{"spacing":{"blockGap":{"top":"var:preset|spacing|0","left":"var:preset|spacing|50"}}},"spacing":{"padding":{"top":"var:preset|spacing|base","bottom":"var:preset|spacing|base"}}},"fontSize":"button-label"} -->
+<div class="wp-block-buttons has-custom-font-size has-button-label-font-size" style="padding-top:var(--wp--preset--spacing--base);padding-bottom:var(--wp--preset--spacing--base)"><!-- wp:button {"backgroundColor":"white","textColor":"navy-blue-cfasa","style":{"elements":{"link":{"color":{"text":"var:preset|color|navy-blue-cfasa"}}},"border":{"radius":{"topLeft":"24px","topRight":"24px","bottomLeft":"24px","bottomRight":"24px"}},"@mobile":{"dimensions":{"width":"var:preset|dimension|50"}},"@tablet":{"dimensions":{"width":"var:preset|dimension|25"}},"dimensions":{"width":"10rem"},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}}},"fontSize":"button-label"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-navy-blue-cfasa-color has-white-background-color has-text-color has-background has-link-color has-button-label-font-size has-custom-font-size wp-element-button" href="/programs-and-services" style="border-top-left-radius:24px;border-top-right-radius:24px;border-bottom-left-radius:24px;border-bottom-right-radius:24px;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">Register</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
-<!-- /wp:group -->
+<!-- /wp:group --></div></div>
+<!-- /wp:cover -->

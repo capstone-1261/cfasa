@@ -11,8 +11,6 @@ Custom Global Styles (Outside of JSON Capabilities
 =================================================== 
 */
 
-
-
 html {
     scroll-behavior: smooth;
     /* font smoothing only works on macOS*/
@@ -20,10 +18,25 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-  
-main {
-    padding: var(--wp--preset--spacing--large);
-    background-color: var(--wp--preset--color--not-quite-white);
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--wp--preset--color--not-quite-white);
+}
+
+section {
+    width: min(calc(100% - 2rem), 1400px);
+    margin-inline: auto;
+    padding: var(--wp--preset--spacing--x-large) 0;
+}
+
+/* Ensure the template parts inner containers line up with the main content */
+.promo-banner div.wp-block-group, .hero-banner div.wp-block-group {
+  width: min(calc(100% - 2rem), 1400px);
+  margin: auto;
 }
 
 [data-filter-item][hidden],
@@ -55,6 +68,8 @@ h5 {
     font-weight: 400;
     line-height: 19px;
   }
+
+
 
 /* 
 ==========================

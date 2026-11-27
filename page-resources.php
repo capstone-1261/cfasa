@@ -58,11 +58,10 @@ $resource_tags = $resource_ids
     ?>
   </div>
 </section>
+
 </main>
 
 <!-- Component: Promo banner -->
 <?php get_template_part('parts/promo-banner'); ?>
-
-
 
 <?php get_footer(); ?>
