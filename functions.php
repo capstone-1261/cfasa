@@ -109,6 +109,31 @@ add_action('wp_enqueue_scripts', 'cfasa_get_involved_styles');
 
 /* End of Get Involved CSS */
 
+function cfasa_external_resource_card_styles() {
+    if ( is_page( 'resources' ) ) {
+        wp_enqueue_style(
+            'cfasa-external-resource-card',
+            get_theme_file_uri( '/css/external-resource-card.css' ),
+            array( 'centre-autism-style' ),
+            '1.0.0'
+        );
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'cfasa_external_resource_card_styles' );
+
+function cfasa_enqueue_content_filters() {
+    wp_enqueue_script(
+        'cfasa-content-filters',
+        get_theme_file_uri( '/js/content-filters.js' ),
+        array(),
+        '1.0.0',
+        true
+    );
+}
+
+add_action( 'wp_enqueue_scripts', 'cfasa_enqueue_content_filters' );
+
 
 // Enque the JavaScript file for navigation functionality
 function theme_enqueue_scripts() {

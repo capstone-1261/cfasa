@@ -23,6 +23,12 @@ html {
   
 main {
     padding: var(--wp--preset--spacing--large);
+    background-color: var(--wp--preset--color--not-quite-white);
+}
+
+[data-filter-item][hidden],
+[data-filter-empty][hidden] {
+    display: none !important;
 }
 
 h5 {
@@ -659,11 +665,39 @@ div.footer-copyright {
 }
 
 
+/* 
+==========================
+Filter Options Styles - for pages with filterable content (e.g., Resources)
+========================== 
+*/
 
+.filter-options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--wp--preset--spacing--small);
+  margin-bottom: var(--wp--preset--spacing--large);
+}
 
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wp--preset--spacing--small);
+}
 
-
-
+.filter-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--base);
+  border-radius: 24px;
+  background-color: var(--wp--preset--color--cyan-pastel, #e9f8f5);
+  color: var(--wp--preset--color--navy-blue-cfasa, #0c2542);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  cursor: pointer;
+}
 
 
 
