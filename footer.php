@@ -88,11 +88,17 @@
         </div>
     </div>
 
-    <nav class="footer-legal" aria-label="Footer legal links">
-            <a aria-label="Privacy Policy" href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Privacy Policy</a>
-            <a aria-label="Terms of Use" href="<?php echo get_permalink( get_page_by_path( 'terms-of-use' ) ); ?>">Terms of Use</a>
-            <a aria-label="Refund Policy" href="<?php echo get_permalink( get_page_by_path( 'refund-policy' ) ); ?>">Refund Policy</a>
-    </nav>
+    <!-- Footer Navigation -->
+        <nav class="footer-legal" aria-label="Footer navigation">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'footer-nav',
+                'container' => false,
+                'menu_class' => 'footer-legal',
+                'fallback_cb' => false
+            ));
+            ?>
+        </nav>
 
         <div class="footer-copyright">
             <p>Copyright &copy; <?php echo date("Y"); ?> Centre for Autism Services Alberta. All Rights Reserved. <span>Website by Brew and Build </span></p>
