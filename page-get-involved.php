@@ -7,7 +7,7 @@ get_template_part('parts/hero-banner-minimal'); ?>
     <div class="get-involved-cards">
 
         <div class="get-involved-card">
-            /* Image goes here */
+            <img src="<?php echo get_template_directory_uri(); ?>/img/donate-card-heart.png" alt="An image of someone giving a gift">
             <div class="get-involved-card-body">
                 <div class="get-involved-card-text">
                     <h2>Donate</h2>
@@ -25,7 +25,7 @@ get_template_part('parts/hero-banner-minimal'); ?>
             </div>
         </div>
         <div class="get-involved-card">
-            /* Image goes here */
+            <img src="<?php echo get_template_directory_uri(); ?>/img/sponsorships-card-hands.png" alt="Hands in a circle together">
             <div class="get-involved-card-body">
                 <div class="get-involved-card-text">
                     <h2>Sponsorships & Partnerships</h2>
@@ -43,7 +43,7 @@ get_template_part('parts/hero-banner-minimal'); ?>
             </div>
         </div>
         <div class="get-involved-card">
-            /* Image goes here */
+            <img src="<?php echo get_template_directory_uri(); ?>/img/fundraiser-card.png" alt="An image from one of our fundraisers showing a speaker">
             <div class="get-involved-card-body">
                 <div class="get-involved-card-text">
                     <h2>Fundraisers</h2>
@@ -61,7 +61,7 @@ get_template_part('parts/hero-banner-minimal'); ?>
             </div>
         </div>
         <div class="get-involved-card">
-            /* Image goes here */
+            <img src="<?php echo get_template_directory_uri(); ?>/img/volunteering-card.png" alt="A group of people volunteering for a good cause">
             <div class="get-involved-card-body">
                 <div class="get-involved-card-text">
                     <h2>Volunteer</h2>
@@ -78,7 +78,7 @@ get_template_part('parts/hero-banner-minimal'); ?>
             </div>
         </div>
         <div class="get-involved-card">
-            /* Image goes here */
+            <img src="<?php echo get_template_directory_uri(); ?>/img/careers-card.png" alt="A picture of glasses on a desk, representing a career">
             <div class="get-involved-card-body">
                 <div class="get-involved-card-text">
                     <h2>Careers</h2>
@@ -95,7 +95,7 @@ get_template_part('parts/hero-banner-minimal'); ?>
             </div>
         </div>
         <div class="get-involved-card">
-            /* Image goes here */
+            <img src="<?php echo get_template_directory_uri(); ?>/img/council-card.png" alt="An image giving a sense of togetherness">
             <div class="get-involved-card-body">
                 <div class="get-involved-card-text">
                     <h2>Neurodiversity Advisory Councils</h2>
@@ -118,4 +118,4 @@ get_template_part('parts/hero-banner-minimal'); ?>
 </section>
 
 
-</main>
+<?php get_footer(); ?>

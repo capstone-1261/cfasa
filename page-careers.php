@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<?php get_template_part('parts/hero-banner-minimal'); ?>
+<? get_template_part('parts/hero-banner-minimal'); ?>
+
 <main>
-<h1><?php the_title(); ?></h1>
 
 <section class="involved-nav-container">
     <div>

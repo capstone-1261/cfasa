@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-<?php get_template_part( 'parts/hero-banner-minimal' ); ?>
-
+<? get_template_part('parts/hero-banner-minimal'); ?>
 <main>
 
 <section class="involved-nav-container">
@@ -22,6 +21,17 @@
 </section>
 
 <section class="council-container">
+
+<section class="donation-intro">
+            <div class="donation-head-text">
+                <h2>Neurodiversity Advisory Councils</h2>
+                <p class="blue-highlight">(NAC)</p>
+                <p>The Neurodiversity Advisory Councils (NAC) are groups of people with lived or living experience who help guide the work of CFASA.</p>
+            </div>
+            <div class="donation-head-image">
+                /* image goes here */
+            </div>  
+        </section>
 
     <div class="council-info-blocks">
         <div class="council-info-blocks-text">
