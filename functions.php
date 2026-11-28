@@ -11,7 +11,9 @@ function centre_autism_theme_setup() {
     register_nav_menus(array(
         'main-nav' => 'Main Navigation',
         'about-nav' => 'About Us Navigation',
-        'involved-nav' => 'Get Involved Navigation'
+        'involved-nav' => 'Get Involved Navigation',
+        'programs-nav' => 'Programs & Services Navigation',
+        'footer-nav' => 'Footer Navigation'
     ));
 }
 
