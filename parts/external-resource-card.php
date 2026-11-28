@@ -44,7 +44,7 @@ foreach ( $resource_tags as $resource_tag ) {
 
     <?php if ( $resource_link ) : ?>
       <div class="resource-link">
-        <a target="_blank" rel="noopener noreferrer" href="<?php echo esc_url( $resource_link ); ?>" class="btn">Take Me There</a>
+        <a target="_blank" rel="noopener noreferrer" href="<?php echo esc_url( $resource_link ); ?>" class="outline-btn">Take Me There</a>
       </div>
     <?php endif; ?>
   </div>

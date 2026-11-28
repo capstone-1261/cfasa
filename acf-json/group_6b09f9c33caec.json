@@ -3,33 +3,12 @@
     "title": "News Article",
     "fields": [
         {
-            "key": "field_6b09f9c3bdf9e",
-            "label": "Article Title",
-            "name": "article_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": 70,
-            "allow_in_bindings": 1,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6b09fa7abdf9f",
             "label": "Article Category",
             "name": "article_category",
             "aria-label": "",
             "type": "taxonomy",
-            "instructions": "Add one or two categories to tell the user what type of article this is.",
+            "instructions": "Add one a category to tell the user what type of article this is.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,11 +21,11 @@
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "id",
-            "field_type": "checkbox",
+            "field_type": "select",
+            "allow_null": 1,
             "allow_in_bindings": 0,
             "bidirectional": 0,
             "multiple": 0,
-            "allow_null": 0,
             "bidirectional_target": []
         },
         {
@@ -94,15 +73,15 @@
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Add Articles to the News & Media Page",
     "show_in_rest": 0,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1795816531
+    "modified": 1795842243
 }

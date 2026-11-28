@@ -44,16 +44,16 @@
         "item_link": "News Article Link",
         "item_link_description": "A link to a news article."
     },
-    "description": "",
+    "description": "For news articles and updates from CFASA",
     "public": true,
-    "hierarchical": false,
+    "hierarchical": true,
     "exclude_from_search": false,
     "publicly_queryable": true,
     "show_ui": true,
     "show_in_menu": true,
     "admin_menu_parent": "",
     "show_in_admin_bar": true,
-    "show_in_nav_menus": true,
+    "show_in_nav_menus": false,
     "show_in_rest": true,
     "rest_base": "",
     "rest_namespace": "wp\/v2",
@@ -61,16 +61,17 @@
     "menu_position": "",
     "menu_icon": {
         "type": "dashicons",
-        "value": "dashicons-admin-post"
+        "value": "dashicons-megaphone"
     },
     "rename_capabilities": false,
     "singular_capability_name": "post",
     "plural_capability_name": "posts",
     "supports": [
-        "title",
         "editor",
-        "thumbnail",
-        "custom-fields"
+        "custom-fields",
+        "excerpt",
+        "page-attributes",
+        "post-formats"
     ],
     "taxonomies": [
         "category"
@@ -89,5 +90,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1795816469
+    "modified": 1795842135
 }
